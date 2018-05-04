@@ -20,7 +20,7 @@
     <?php
       echo "<p>registrado como ". $_SESSION['usuario']. "</p>";
     ?>
-    <textarea rows="100" cols="100" class="pre-scrollable form-control"id="aboutDescription" style="resize: none;">
+    <textarea rows="100" cols="100" class="pre-scrollable form-control"id="conversacion" style="resize: none;">
     </textarea>
     <nav class="navbar navbar-inverse navbar-fixed-buttom">
         <form metod="POST" action="../php/enviarMensaje.php" class="block" id ="enviarF">

@@ -7,7 +7,7 @@
   if($fila = mysqli_fetch_array($resul))
   {
     echo "<p>El usuario ya existe</p>";
-    echo "<a href='../html/registro.html'>Volver</a>";
+    echo "<a href='../index.html'>Volver</a>";
   }
   else
   {

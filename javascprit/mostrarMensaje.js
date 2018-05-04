@@ -27,8 +27,6 @@ function escribir()
   if(conexion1.readyState == 4)
   {
     conversacion.value = conexion1.responseText;
-  }
-  else
-  {
+    conversacion.scrollTop = conversacion.scrollHeight;
   }
 }

@@ -38,7 +38,4 @@ function procesarEventos()
   {
     resultados.value = "";
   }
-  else
-  {
-  }
 }

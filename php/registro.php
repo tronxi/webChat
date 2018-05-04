@@ -5,6 +5,6 @@
   mysqli_query($con, $query);
   mysqli_close($con);
   header("Location: ../index.html");*/
-  echo "usuario".$_POST['usuario'];
-  echo "contraseña".sha1( $_POST['password']);
+  echo "usuario ".$_POST['usuario'];
+  echo "\ncontraseña ".sha1( $_POST['password']);
 ?>

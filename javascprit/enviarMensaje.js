@@ -27,7 +27,6 @@ function enviar()
   conexion.onreadystatechange = procesarEventos;
   conexion.open('POST','../php/enviarMensaje.php', true);
   conexion.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-  console.log(getDatos());
   conexion.send(getDatos());
 }
 

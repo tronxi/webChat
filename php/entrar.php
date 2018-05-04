@@ -12,11 +12,13 @@
     }
     else {
       echo "contraseña incorrecta";
+      echo "<a href='../index.html'>Volver</a>";
     }
   }
   else
   {
     echo "no existe el usuario";
+    echo "<a href='../index.html'>Volver</a>";
   }
   mysqli_close($con);
 ?>

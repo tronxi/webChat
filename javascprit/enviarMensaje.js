@@ -35,10 +35,10 @@ function procesarEventos()
   var resultados = document.getElementById('mensaje');
   if(conexion.readyState == 4)
   {
-    resultados.value = "enviando";
+    resultados.value = "";
   }
   else
   {
-    resultados.value = "";
+    resultados.value = "Enviando...";
   }
 }

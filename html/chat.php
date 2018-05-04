@@ -10,7 +10,7 @@
     <script src=""></script>
     <link href="../css/login.css" rel="stylesheet">
   </head>
-  <body class="text-center">
+  <body>
     <h1>chat</h1>
     <?php
       echo "registrado como ". $_SESSION['usuario'];

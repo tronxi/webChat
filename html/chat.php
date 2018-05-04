@@ -21,7 +21,7 @@
       echo "<p>registrado como ". $_SESSION['usuario']. "</p>";
     ?>
 
-    <textarea rows="15" cols="50" id="aboutDescription"
-    style="resize: none;"></textarea>
+    <textarea rows="15" cols="50" class="pre-scrollable"id="aboutDescription" style="resize: none;">
+    </textarea>
   </body>
 </html>

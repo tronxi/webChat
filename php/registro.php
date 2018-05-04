@@ -6,7 +6,8 @@
   $resul = mysqli_query($con, $query);
   if($fila = mysqli_fetch_array($resul))
   {
-    echo "el usuario existe";
+    echo "<p>El usuario ya existe</p>"
+    echo "<a href="../html/registro.html">Volver</a>";
   }
   else
   {
@@ -14,4 +15,5 @@
     mysqli_query($con, $query);
   }
   mysqli_close($con);
+    header("Location: ../index.html"); 
 ?>

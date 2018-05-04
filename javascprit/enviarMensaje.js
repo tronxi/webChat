@@ -33,7 +33,7 @@ function enviar()
 
 function procesarEventos()
 {
-  var resultados = document.getElementById('mensaje');
+  /*var resultados = document.getElementById('mensaje');
   if(conexion.readyState == 4)
   {
     resultados.value = "";
@@ -41,5 +41,5 @@ function procesarEventos()
   else
   {
     resultados.value = "Enviando...";
-  }
+  }*/
 }

@@ -11,13 +11,16 @@
     <link href="../css/chat.css" rel="stylesheet">
   </head>
   <body class="text-center">
-    <h1>chat</h1>
+    <h1>
+      chat
+      <button type="button" class="btn btn-lg btn-primary" onclick="window.location.href = '../php/cerrarSesion.php'">
+        Cerrar Sesion
+      </button>
+    </h1>
     <?php
       echo "<p>registrado como ". $_SESSION['usuario']. "</p>";
     ?>
-    <button type="button" class="btn btn-lg btn-primary" onclick="window.location.href = '../php/cerrarSesion.php'">
-      Cerrar Sesion
-    </button>
+
     <textarea rows="15" cols="50" id="aboutDescription"
     style="resize: none;"></textarea>
   </body>

@@ -5,7 +5,7 @@ function inicializarEventos()
   formulario.addEventListener('submit', enviarMensaje, false);
 }
 
-function eviarMensaje(e)
+function enviarMensaje(e)
 {
   e.preventDefault();
   eviar();

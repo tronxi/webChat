@@ -4,9 +4,11 @@
 
   $query = "select nombre, contra from usuario where nombre = '".$_POST['usuario']."'";
   $resul = mysqli_query($con, $query);
-  $fila = mysqli_fetch_array($resul)
-  echo "usuario ".$_fila['nombre'];
-  echo "\ncontraseña ".$_fila['contra']);
+  while($fila = mysqli_fetch_array($resul))
+  {
+    echo "usuario ".$_fila['nombre'];
+    echo "\ncontraseña ".$_fila['contra']);
+  }
   /*$query = "insert into usuario (nombre, contra) values ('".$_POST['usuario']."','".sha1( $_POST['password'])."')";
   mysqli_query($con, $query);
   mysqli_close($con);*/

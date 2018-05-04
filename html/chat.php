@@ -25,9 +25,7 @@
     </textarea>
     <nav class="navbar navbar-inverse navbar-fixed-buttom text">
       <p class="text-center">
-
-
-        <form metod="POST" action="../php/enviarMensaje.php" class="form-inline justify-content-center" id ="enviarF">
+        <form metod="POST" action="../php/enviarMensaje.php" id ="enviarF">
         <div class="input-group">
           <input type="text" class="form-control" id="mensaje" name="mensaje">
           <div class="input-group-append">

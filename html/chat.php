@@ -12,7 +12,7 @@
   <body class="text-center">
     <h1>chat</h1>
     <?php
-      echo "registrado como ". $_SESSION['usuario'];
+      echo "<p>registrado como ". $_SESSION['usuario']. "</p>";
     ?>
     <button type="button" class="btn btn-lg btn-primary" onclick="window.location.href = '../php/cerrarSesion.php'">
       Cerrar Sesion

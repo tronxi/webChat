@@ -14,5 +14,7 @@
     <?php
       echo "registrado como ". $_SESSION['usuario'];
     ?>
+    <input type="button"class="btn btn-lg btn-primary btn-block" value="CerrarSesion"
+    onclick="window.location.href('../php/cerrarSession.php');"/>
   </body>
 </html>

@@ -9,6 +9,9 @@
     if($fila['contra'] == sha1( $_POST['password']))
     {
       echo "dentro";
+      session_start();
+      $_SESSION['usuario'] = $_POST['usuario'];
+      header("Location: ../html/chat.html");
     }
     else {
       echo "contraseña incorrecta";

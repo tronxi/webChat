@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,5 +12,8 @@
   </head>
   <body class="text-center">
     <h1>chat</h1>
+    <?php
+      echo "registrado como ". $_SESSION['usuario'];
+    ?>
   </body>
 </html>

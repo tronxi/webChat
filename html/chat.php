@@ -24,6 +24,9 @@
     <textarea rows="100" cols="100" class="pre-scrollable form-control"id="conversacion" style="resize: none;" disabled>
     </textarea>
     <nav class="navbar navbar-inverse navbar-fixed-buttom text">
+      <p class="text-center">
+
+
         <form metod="POST" action="../php/enviarMensaje.php" class="form-inline justify-content-center" id ="enviarF">
         <div class="input-group">
           <input type="text" class="form-control" id="mensaje" name="mensaje">
@@ -34,6 +37,7 @@
           </div>
         </div>
     </form>
+  </p>
     </nav>
   </body>
 </html>

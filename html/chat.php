@@ -23,14 +23,16 @@
     <textarea rows="100" cols="100" class="pre-scrollable form-control"id="aboutDescription" style="resize: none;">
     </textarea>
     <nav class="navbar navbar-inverse navbar-fixed-buttom">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control">
-        <div class="input-group-append">
-          <button type="button" class="btn btn-lg btn-primary">
-            Enviar
-          </button>
+        <form metod="POST" action="../php/enviarMensaje.php">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control">
+          <div class="input-group-append">
+            <button type="button" class="btn btn-lg btn-primary">
+              Enviar
+            </button>
+          </div>
         </div>
-      </div>
+    </form>
     </nav>
   </body>
 </html>

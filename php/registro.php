@@ -10,11 +10,8 @@
   }
   else
   {
-    echo "el usuario no existe";
+    $query = "insert into usuario (nombre, contra) values ('".$_POST['usuario']."','".sha1( $_POST['password'])."')";
+    mysqli_query($con, $query);
   }
-  /*$query = "insert into usuario (nombre, contra) values ('".$_POST['usuario']."','".sha1( $_POST['password'])."')";
-  mysqli_query($con, $query);*/
   mysqli_close($con);
-  echo "usuario ".$_POST['usuario'];
-  echo "\ncontraseña ".sha1( $_POST['password']);
 ?>

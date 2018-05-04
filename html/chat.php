@@ -23,17 +23,14 @@
     <textarea rows="100" cols="100" class="pre-scrollable form-control"id="aboutDescription" style="resize: none;">
     </textarea>
 <nav class="navbar navbar-inverse navbar-fixed-buttom">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Sitio Web</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Inicio</a></li>
-      <li><a href="#">P&aacute;gina 1</a></li>
-      <li><a href="#">P&aacute;gina 2</a></li>
-      <li><a href="#">P&aacute;gina 3</a></li>
-    </ul>
+  <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <button type="button" class="btn btn-lg btn-primary" onclick="window.location.href = '../php/cerrarSesion.php'">
+      Cerrar Sesion
+    </button>
   </div>
+</div>
 </nav>
   </body>
 </html>

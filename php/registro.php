@@ -7,13 +7,14 @@
   if($fila = mysqli_fetch_array($resul))
   {
     echo "<p>El usuario ya existe</p>";
-    echo "<a href="../html/registro.html">Volver</a>";
+    echo "<a href='../html/registro.html'>Volver</a>";
   }
   else
   {
     $query = "insert into usuario (nombre, contra) values ('".$_POST['usuario']."','".sha1( $_POST['password'])."')";
     mysqli_query($con, $query);
+    mysqli_close($con);
+    header("Location: ../index.html");
   }
   mysqli_close($con);
-    header("Location: ../index.html");
 ?>

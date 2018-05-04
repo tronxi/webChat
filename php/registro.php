@@ -5,5 +5,6 @@
   mysqli_query($con, $query);
   mysqli_close($con);
   header("Location: ../index.html");*/
-  echo "nombre" .$_POST['usuario'] .$_POST['password'];
+  echo $_POST['usuario'];
+  echo $_POST['password'];
 ?>

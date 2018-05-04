@@ -20,8 +20,7 @@
     <?php
       echo "<p>registrado como ". $_SESSION['usuario']. "</p>";
     ?>
-
-    <textarea rows="500" cols="100" class="pre-scrollable form-control"id="aboutDescription" style="resize: none;">
+    <textarea rows="100" cols="100" class="pre-scrollable form-control"id="aboutDescription" style="resize: none;">
     </textarea>
   </body>
 </html>

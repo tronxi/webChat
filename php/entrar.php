@@ -25,7 +25,7 @@
           <p>
             contraseña incorrecta
           </p>
-          <a href='../index.html'>Volver</a>
+          <a href='"../index.html"'>Volver</a>
         </body>
       </html>'
     }
@@ -44,7 +44,7 @@
         <p>
           no existe el usuario
         </p>
-        <a href='../index.html'>Volver</a>
+        <a href='"../index.html"'>Volver</a>
       </body>
     </html>'
   }

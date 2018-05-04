@@ -11,22 +11,22 @@ function mostrarDatos()
 }
 
 
-var conexion;
+var conexion1;
 
 function enviar(url)
 {
-  conexion = new XMLHttpRequest(url);
-  conexion.onreadystatechange = procesarEventos;
-  conexion.open("GET", url, true);
-  conexion.send();
+  conexion1 = new XMLHttpRequest(url);
+  conexion1.onreadystatechange = procesarEventos;
+  conexion1.open("GET", url, true);
+  conexion1.send();
 }
 
 function procesarEventos()
 {
   var resultados = document.getElementById('conversacion');
-  if(conexion.readyState == 4)
+  if(conexion1.readyState == 4)
   {
-    resultados.value = conexion.responseText;
+    resultados.value = conexion1.responseText;
   }
   else
   {

@@ -22,15 +22,15 @@
     ?>
     <textarea rows="100" cols="100" class="pre-scrollable form-control"id="aboutDescription" style="resize: none;">
     </textarea>
-<nav class="navbar navbar-inverse navbar-fixed-buttom">
-  <div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  <div class="input-group-append">
-    <button type="button" class="btn btn-lg btn-primary" onclick="window.location.href = '../php/cerrarSesion.php'">
-      Cerrar Sesion
-    </button>
-  </div>
-</div>
-</nav>
+    <nav class="navbar navbar-inverse navbar-fixed-buttom">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control">
+        <div class="input-group-append">
+          <button type="button" class="btn btn-lg btn-primary">
+            Enviar
+          </button>
+        </div>
+      </div>
+    </nav>
   </body>
 </html>

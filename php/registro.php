@@ -7,7 +7,7 @@
   while($fila = mysqli_fetch_array($resul))
   {
     echo "usuario ".$_fila['nombre'];
-    echo "\ncontraseña ".$_fila['contra']);
+    echo "\ncontraseña ".$_fila['contra'];
   }
   /*$query = "insert into usuario (nombre, contra) values ('".$_POST['usuario']."','".sha1( $_POST['password'])."')";
   mysqli_query($con, $query);*/

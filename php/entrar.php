@@ -13,7 +13,7 @@
       header("Location: ../html/chat.php");
     }
     else {
-      /*echo '<!DOCTYPE html>
+      echo '<!DOCTYPE html>
       <html>
         <head>
           <meta charset="utf-8">
@@ -27,7 +27,7 @@
           </p>
           <a href='"../index.html"'>Volver</a>
         </body>
-      </html>'*/
+      </html>';
     }
   }
   else
@@ -46,7 +46,7 @@
         </p>
         <a href='"../index.html"'>Volver</a>
       </body>
-    </html>'
+    </html>';
   }
   mysqli_close($con);
 ?>

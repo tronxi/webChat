@@ -18,5 +18,7 @@
     <button type="button" class="btn btn-lg btn-primary" onclick="window.location.href = '../php/cerrarSesion.php'">
       Cerrar Sesion
     </button>
+    <textarea rows="15" cols="50" id="aboutDescription"
+    style="resize: none;"></textarea>
   </body>
 </html>

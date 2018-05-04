@@ -11,7 +11,7 @@
       echo "dentro";
       session_start();
       $_SESSION['usuario'] = $_POST['usuario'];
-      header("Location: ../html/chat.html");
+      header("Location: ../html/chat.php");
     }
     else {
       echo "contraseña incorrecta";

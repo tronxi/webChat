@@ -8,7 +8,7 @@ function inicializarEventos()
 function enviarMensaje(e)
 {
   e.preventDefault();
-  eviar();
+  enviar();
 }
 
 function getDatos()

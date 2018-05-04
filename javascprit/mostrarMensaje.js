@@ -3,7 +3,7 @@ function inicializarEventos()
 {
 
 }
-var actualizar = setInterval(function(){mostrarDatos()}, 500);
+//var actualizar = setInterval(function(){mostrarDatos()}, 500);
 function mostrarDatos()
 {
   var url = "../php/mostrarMensaje.php";

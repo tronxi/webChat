@@ -18,16 +18,5 @@
     <button type="button" class="btn btn-lg btn-primary" onclick="window.location.href = '../php/cerrarSesion.php'">
       Cerrar Sesion
     </button>
-    <div class="row">
-
-        <div class="conversation-wrap col-lg-3">
-            <div class="media conversation">
-                <div class="media-body">
-                    <h5 class="media-heading">Naimish Sakhpara</h5>
-                    <small>Hello</small>
-                </div>
-            </div>
-
-        </div>
   </body>
 </html>

@@ -27,7 +27,7 @@
       <p class="text-center">
         <form metod="POST" action="../php/enviarMensaje.php" id ="enviarF">
         <div class="input-group">
-          <input type="text" class="form-control" id="mensaje" name="mensaje">
+          <input type="text" class="form-control" id="mensaje" name="mensaje" autocomplete="off">
           <div class="input-group-append">
             <button type="submit" class="btn btn-lg btn-primary" id="enviar">
               Enviar

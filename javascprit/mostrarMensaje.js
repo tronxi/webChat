@@ -9,7 +9,7 @@ function mostrarDatos()
   var url = "../php/mostrarMensaje.php";
   mostrar(url);
 }
-
+//dgd
 
 var conexion1;
 

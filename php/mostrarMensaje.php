@@ -7,7 +7,7 @@
   $resul = mysqli_query($con, $query);
   while($fila = mysqli_fetch_array($resul))
   {
-    echo htmlentities($fila['nombre'],ENT_HTML5,'UTF-8').": ".htmlentities($fila['texto'],ENT_HTML5,'UTF-8')." - ".$fila['fecha']."\n";
+    echo utf8_decode( htmlentities($fila['nombre'],ENT_HTML5,'UTF-8').": ".htmlentities($fila['texto'],ENT_HTML5,'UTF-8')." - ".$fila['fecha']."\n");
   }
   mysqli_close($con);
 ?>

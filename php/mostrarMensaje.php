@@ -2,12 +2,11 @@
   header('Content-Type: text/html; charset=utf-8');
   $con = mysqli_connect("192.168.0.5:3306", "tronxi", "tronxi97");
   mysqli_select_db($con, "chat");
-  mysqli_set_charset($conexion,'utf8');  
   $query = "select nombre, texto, fecha from mensaje";
   $resul = mysqli_query($con, $query);
   while($fila = mysqli_fetch_array($resul))
   {
-    echo utf8_decode( htmlentities($fila['nombre'],ENT_HTML5,'UTF-8').": ".htmlentities($fila['texto'],ENT_HTML5,'UTF-8')." - ".$fila['fecha']."\n");
+    echo htmlentities($fila['nombre']).": ".htmlentities($fila['texto'])." - ".$fila['fecha']."\n";
   }
   mysqli_close($con);
 ?>

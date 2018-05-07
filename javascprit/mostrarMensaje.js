@@ -27,6 +27,6 @@ function escribir()
   {
     conversacion.value = conexion1.responseText;
     console.log(conversacion.scrollTop);
-    conversacion.scrollTop = conversacion.scrollHeight;
+    //conversacion.scrollTop = conversacion.scrollHeight;
   }
 }

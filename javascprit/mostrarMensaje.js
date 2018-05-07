@@ -23,22 +23,9 @@ function mostrar(url)
 function escribir()
 {
   var conversacion = document.getElementById('conversacion');
-  var bajar = true;
   if(conexion1.readyState == 4)
   {
-    if(conversacion.scrollTop == conversacion.scrollHeight)
-    {
-      bajar = true;
-    }
-    else
-    {
-      bajar = false;
-    }
     conversacion.value = conexion1.responseText;
-    console.log(conversacion.scrollTop);
-    if(bajar)
-    {
-      conversacion.scrollTop = conversacion.scrollHeight;
-    }
+    conversacion.scrollTop = conversacion.scrollHeight;
   }
 }

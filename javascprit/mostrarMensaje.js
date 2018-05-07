@@ -25,8 +25,8 @@ function escribir()
   var conversacion = document.getElementById('conversacion');
   if(conexion1.readyState == 4)
   {
-    console.log(conexion1.responseText);
     conversacion.value = conexion1.responseText;
+    console.log(conversacion.scrollTop);
     conversacion.scrollTop = conversacion.scrollHeight;
   }
 }

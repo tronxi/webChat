@@ -6,7 +6,7 @@
   $resul = mysqli_query($con, $query);
   while($fila = mysqli_fetch_array($resul))
   {
-    echo $fila['nombre'].": ".$fila['texto']." - ".$fila['fecha']."\n";
+    echo $fila['nombre']."- ".$fila['fecha'].": ".$fila['texto']."\n";
   }
   mysqli_close($con);
 ?>

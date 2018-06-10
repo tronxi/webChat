@@ -10,11 +10,11 @@
   }
   mysqli_close($con);
 
-  $objJson = "";
+  $objJson = array();
   while($fila = mysqli_fetch_array($resul))
   {
     //echo $fila['nombre']."- ".$fila['fecha'].": ".$fila['texto']."\n";
-    $objJson += $fila['nombre']."- ".$fila['fecha'].": ".$fila['texto']."\n";
+    $objJson[] = $fila;
   }
   mysqli_close($con);
 

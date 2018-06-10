@@ -16,7 +16,8 @@
     //echo $fila['nombre']."- ".$fila['fecha'].": ".$fila['texto']."\n";
     $objJson[] = $fila;
   }
+  echo json_encode($objJson, JSON_FORCE_OBJECT);
   mysqli_close($con);
 
-  echo json_encode($objJson, JSON_FORCE_OBJECT);
+
 ?>

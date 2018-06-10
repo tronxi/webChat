@@ -12,5 +12,5 @@
   }
   mysqli_close($con);
 
-  return json_encode($objJson);
+  echo json_encode($objJson);
 ?>

@@ -8,10 +8,9 @@
   while($fila = mysqli_fetch_array($resul))
   {
     //echo $fila['nombre']."- ".$fila['fecha'].": ".$fila['texto']."\n";
-    echo $fila;
-    //$objJson[] = $fila;
+    $objJson[] = $fila['nombre']."- ".$fila['fecha'].": ".$fila['texto']."\n";
   }
   mysqli_close($con);
 
-  //echo json_encode($objJson);
+  echo json_encode($objJson);
 ?>

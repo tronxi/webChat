@@ -4,10 +4,19 @@
   mysqli_select_db($con, "chat");
   $query = "select nombre, texto, fecha from mensaje";
   $resul = mysqli_query($con, $query);
-
   while($fila = mysqli_fetch_array($resul))
   {
     echo $fila['nombre']."- ".$fila['fecha'].": ".$fila['texto']."\n";
   }
   mysqli_close($con);
+
+  $objJson = "";
+  while($fila = mysqli_fetch_array($resul))
+  {
+    //echo $fila['nombre']."- ".$fila['fecha'].": ".$fila['texto']."\n";
+    $objJson += $fila['nombre']."- ".$fila['fecha'].": ".$fila['texto']."\n";
+  }
+  mysqli_close($con);
+
+  return json_encode($objJson);
 ?>

@@ -10,7 +10,7 @@
     {
       session_start();
       $_SESSION['usuario'] = $_POST['usuario'];
-      echo "ok"
+      echo "ok";
     }
     else {
       echo "contraseñaIncorrecta";

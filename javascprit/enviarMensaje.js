@@ -15,7 +15,7 @@ function getDatos()
 {
   var cad='';
   var mensaje = document.getElementById('mensaje').value;
-  cad = 'mensaje='+encodeURIComponent(mensaje);
+  cad = 'mensaje='+encodeURIComponent(mensaje)+'&conversacion'+encodeURI('0');
   return cad;
 }
 

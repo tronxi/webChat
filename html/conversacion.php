@@ -10,7 +10,7 @@
 
 <body>
 	<div class="container">
-		<div class='card-deck mb-3 text-center' id=conversaciones>
+		<div class='card-deck mb-6 text-center' id=conversaciones>
 
 		</div>
 	</div>

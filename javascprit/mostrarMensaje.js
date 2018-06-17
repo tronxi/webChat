@@ -1,9 +1,14 @@
 addEventListener('load', inicializarEventos, false);
+
 function inicializarEventos()
 {
 
 }
-var actualizar = setInterval(function(){mostrarDatos()}, 500);
+var actualizar = setInterval(function()
+{
+  mostrarDatos()
+}, 500);
+
 function mostrarDatos()
 {
   var url = "../php/mostrarMensaje.php";
@@ -23,7 +28,7 @@ function mostrar(url)
 function escribir()
 {
   var conversacion = document.getElementById('conversacion');
-  if(conexion1.readyState == 4)
+  if (conexion1.readyState == 4)
   {
     conversacion.value = conexion1.responseText;
     conversacion.scrollTop = conversacion.scrollHeight;

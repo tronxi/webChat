@@ -1,4 +1,5 @@
 addEventListener('load', inicializarEventos, false);
+
 function inicializarEventos()
 {
   var conversaciones = document.getElementById('conversaciones');
@@ -10,8 +11,6 @@ function enviarMensaje()
   url = "../php/conversacion.php";
   enviar(url);
 }
-
-
 var conexion;
 
 function enviar(url)
@@ -24,7 +23,7 @@ function enviar(url)
 
 function procesarEventos()
 {
-  if(conexion.readyState == 4)
+  if (conexion.readyState == 4)
   {
     //conversaciones.innerHTML = conexion.responseText;
   }

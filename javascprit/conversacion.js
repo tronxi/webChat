@@ -24,12 +24,12 @@ function enviar(url)
 function guardarConversacion(conversacion)
 {
 	console.log(conversacion);
-	/*var url2 = "../php/abrirConversacion.php";
+	var url2 = "../php/abrirConversacion.php";
 	conexion2 = new XMLHttpRequest();
 	conexion2.onreadystatechange = null;
   	conexion2.open('POST',url2, true);
   	conexion2.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-  	conexion.send('conversacion=' + encodeURIComponent(conversacion));*/
+  	conexion2.send('conversacion=' + encodeURIComponent(conversacion));
 }
 
 function procesarEventos()

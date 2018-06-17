@@ -20,10 +20,19 @@ function enviar(url)
 	conexion.open("GET", url, true);
 	conexion.send();
 }
-
+function getDatos()
+{
+	var cad='';
+	cad = 'conversacion=' + encodeURIComponent(conversacion);
+	return cad;
+}
 function guardarConversacion(conversacion)
 {
-	document.getElementById("php").innerHTML = "<?php session_start(); $_SESSION['conversacion'] = " + conversacion.toString() + ";header('Location: ../html/chat.php'); ";
+	var url2 = "../php/abrirConversacion.php";
+  	var conexion2 = new XMLHttpRequest();
+  	conexion2.open('POST',url2, true);
+  	conexion2.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  	conexion2.send(getDatos(conversacion));
 }
 
 function procesarEventos()

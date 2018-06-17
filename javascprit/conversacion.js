@@ -24,11 +24,19 @@ function enviar(url)
 function guardarConversacion(conversacion)
 {
 	conexion2 = new XMLHttpRequest();
-	conexion2.onreadystatechange = null;
+	conexion2.onreadystatechange = abrirChat;
   	conexion2.open('POST','../php/abrirConversacion.php', true);
   	conexion2.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   	conexion2.send('conversacion=' + encodeURIComponent(conversacion));
 	console.log(conversacion);
+}
+
+function abrirChat()
+{
+	if(conexion2.readyState == 4)
+	{
+		window.location = "../html/chat.php";
+	}
 }
 
 function procesarEventos()

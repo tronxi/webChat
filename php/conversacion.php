@@ -18,10 +18,11 @@
                   c.nombre = '".$_SESSION['usuario']."')
            ordery by c.id_conversacion";
   $resul = mysqli_query($con, $query);
-  echo $_SESSION['usuario'];
+
 
   while($fila = mysqli_fetch_array($resul))
   {
+    echo $_SESSION['usuario'];
     echo $fila['nombre']."\n";
   }
   mysqli_close($con);

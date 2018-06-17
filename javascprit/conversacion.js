@@ -12,7 +12,6 @@ function enviarMensaje()
 	enviar(url);
 }
 var conexion;
-var cargar = true;
 function enviar(url)
 {
 	conexion = new XMLHttpRequest(url);
@@ -33,10 +32,9 @@ function guardarConversacion(conversacion)
 
 function abrirChat()
 {
-	if(conexion2.readyState == 4 && cargar)
+	if(conexion2.readyState == 4)
 	{
 		window.location = "../html/chat.php";
-		cargar = false;
 	}
 }
 

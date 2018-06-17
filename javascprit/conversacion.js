@@ -36,6 +36,7 @@ function abrirChat()
 	if(conexion2.readyState == 4)
 	{
 		window.location = "../html/chat.php";
+		conexion2 = null;
 	}
 }
 

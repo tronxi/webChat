@@ -4,7 +4,7 @@
   mysqli_select_db($con, "chat");
 
   $query = "SELECT DISTINCT
-    c.nombre, c.id_conversacion
+    nombre, id_conversacion
 FROM
     conversacion c
 WHERE
@@ -22,8 +22,8 @@ ORDER BY c.id_conversacion";
   $objJson = array();
   while($fila = mysqli_fetch_array($resul))
   {
-    $objJson[] = array('nombre' => $fila['c.nombre'],
-					  'idConversacion' => $fila['c.id_conversacion']);
+    $objJson[] = array('nombre' => $fila['nombre'],
+					  'idConversacion' => $fila['id_conversacion']);
   }
   mysqli_close($con);
   echo json_encode($objJson);

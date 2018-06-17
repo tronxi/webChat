@@ -26,6 +26,10 @@ function procesarEventos()
 	if(conexion.readyState == 4)
 	{
 		var conversacionJson = JSON.parse(conexion.responseText);
+		for(var i in conversacionJson)
+		{
+			console.log(conversacionJson[i].nombre);
+		}
 		conversaciones.innerHTML = conversacionJson.nombre;
 		console.log("hola");
 	}

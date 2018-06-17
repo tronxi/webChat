@@ -50,7 +50,6 @@ function procesarEventos()
 
 		}
 		conversaciones.innerHTML = conversacionHTML;
-		conexion = null;
 	}
 	else
 	{

@@ -10,7 +10,7 @@
 
 <body class="text-center">
 	<h1>
-		<button type="button" class="btn btn-lg btn-primary" onclick="window.location.href = 'buscar.html'">Buscar
+		<button type="button" class="btn btn-lg btn-primary" onclick="window.location.href = 'buscarPersonas.html'">Buscar
 		</button>
 		chat
 		<button type="button" class="btn btn-lg btn-primary" onclick="window.location.href = '../php/cerrarSesion.php'">
@@ -22,7 +22,7 @@
       echo "<p>registrado como ". $_SESSION['usuario']. "</p>";
     ?>
 		<div class="container text-center">
-			<div class='card-deck mb-2 text-center' id=conversaciones>
+			<div class='card-deck mb-2 text-center' id="conversaciones">
 
 			</div>
 		</div>

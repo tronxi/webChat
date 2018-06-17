@@ -35,7 +35,7 @@
           </div>
         </div>
     </form>
-  </p>
-    </nav>
+    </p>
+  </nav>
   </body>
 </html>

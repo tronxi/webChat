@@ -21,7 +21,6 @@
 			</div>
 		</div>
 	</div>
-	<div id="php"></div>
 </body>
 
 </html>

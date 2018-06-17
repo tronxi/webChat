@@ -28,5 +28,6 @@ function procesarEventos()
   {
       console.log("hola");
     conversaciones.innerHTML = conexion.responseText;
+    conversaciones.innerHTML = "hola";
   }
 }

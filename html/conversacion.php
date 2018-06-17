@@ -9,8 +9,8 @@
 </head>
 
 <body>
-	<div class="container">
-		<div class='card-deck mb-6 text-center' id=conversaciones>
+	<div class="container text-center">
+		<div class='card-deck mb-2 text-center' id=conversaciones>
 
 		</div>
 	</div>

@@ -36,6 +36,7 @@ function procesarEventos()
 		{
 			conversacionHTML += "<div class='card-deck mb-3 text-center'><div class='card mb-4 box-shadow'><div class='card-header'><h4 class='my-0 font-weight-normal'>" + conversacionJson[i].nombre + "</h4></div><div class='card-body'><button type='button' class='btn btn-lg btn-block btn-outline-primary' id=" + conversacionJson[i].idConversacion.toString() + ">hablar</button></div></div></div>";
 			var boton = document.getElementById(conversacionJson[i].idConversacion.toString());
+			console.log(conversacionJson[i].idConversacion.toString());
 			if(boton)
 			{
 				console.log("ola");

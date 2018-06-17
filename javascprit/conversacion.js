@@ -20,6 +20,7 @@ function enviar(url)
   conexion.onreadystatechange = procesarEventos;
   conexion.open("GET", url, true);
   conexion.send();
+  console.log("hola");
 }
 
 function procesarEventos()

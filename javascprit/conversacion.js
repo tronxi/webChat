@@ -20,19 +20,15 @@ function enviar(url)
 	conexion.open("GET", url, true);
 	conexion.send();
 }
-function getDatos(conversacion)
-{
-	var cad='';
-	cad = 'conversacion=' + encodeURIComponent(conversacion);;
-	return cad;
-}
+
 function guardarConversacion(conversacion)
 {
 	var url2 = "../php/abrirConversacion.php";
   	var conexion2 = new XMLHttpRequest();
   	conexion2.open('POST',url2, true);
   	conexion2.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-  	conexion2.send(getDatos(conversacion));
+  	conexion2.send('conversacion=' + encodeURIComponent(conversacion));
+	console.log("hasta los huevos");
 }
 
 function procesarEventos()

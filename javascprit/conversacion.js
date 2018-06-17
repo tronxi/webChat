@@ -20,10 +20,10 @@ function enviar(url)
 	conexion.open("GET", url, true);
 	conexion.send();
 }
-function getDatos()
+function getDatos(conversacion)
 {
 	var cad='';
-	cad = 'conversacion=' + encodeURIComponent(conversacion);
+	cad = 'conversacion=' + encodeURIComponent(conversacion);;
 	return cad;
 }
 function guardarConversacion(conversacion)

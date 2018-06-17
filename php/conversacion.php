@@ -17,10 +17,13 @@ WHERE
         WHERE
             c.nombre = '".$_SESSION['usuario']."')
 ORDER BY c.id_conversacion";
+
   $resul = mysqli_query($con, $query);
+  $objJson = array();
   while($fila = mysqli_fetch_array($resul))
   {
-    echo $fila['nombre']."\n";
+    $objJson[] = array('nombre' => $fila['nombre'],
+					  'idConversacion' => $fila['id_conversacion']);
   }
   mysqli_close($con);
 ?>

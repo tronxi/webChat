@@ -3,7 +3,7 @@ addEventListener('load', inicializarEventos, false);
 function inicializarEventos()
 {
 	var conversaciones = document.getElementById('conversaciones');
-	enviarMensaje()
+	enviarMensaje();
 }
 
 function enviarMensaje()
@@ -12,7 +12,7 @@ function enviarMensaje()
 	enviar(url);
 }
 var conexion;
-
+var cargar = true;
 function enviar(url)
 {
 	conexion = new XMLHttpRequest(url);
@@ -33,10 +33,10 @@ function guardarConversacion(conversacion)
 
 function abrirChat()
 {
-	if(conexion2.readyState == 4)
+	if(conexion2.readyState == 4 && cargar)
 	{
 		window.location = "../html/chat.php";
-		conexion2 = null;
+		cargar = false;
 	}
 }
 

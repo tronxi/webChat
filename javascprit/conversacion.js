@@ -25,7 +25,8 @@ function procesarEventos()
 {
 	if(conexion.readyState == 4)
 	{
-		//conversaciones.innerHTML = conexion.responseText;
+		conversaciones.innerHTML = conexion.responseText;
+		console.log("hola");
 	}
 	else
 	{

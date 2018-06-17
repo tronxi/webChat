@@ -17,7 +17,7 @@ function buscar()
 
 function abrirConversacion(nombre)
 {
-	console.log(nombre);
+	console.log(nombre.toString());
 }
 
 function procesarEventos()

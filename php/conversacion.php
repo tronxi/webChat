@@ -26,4 +26,5 @@ ORDER BY c.id_conversacion";
 					  'idConversacion' => $fila['id_conversacion']);
   }
   mysqli_close($con);
+  echo json_encode($objJson);
 ?>

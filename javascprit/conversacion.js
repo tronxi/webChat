@@ -17,7 +17,7 @@ function enviar(url)
 {
 	conexion = new XMLHttpRequest(url);
 	conexion.onreadystatechange = procesarEventos;
-	conexion.open("GET", url, false);
+	conexion.open("GET", url, true);
 	conexion.send();
 }
 

@@ -10,6 +10,8 @@
 
 <body class="text-center">
 	<h1>
+		<button type="button" class="btn btn-lg btn-primary" onclick="window.location.href = 'buscar.html'">Buscar
+		</button>
 		chat
 		<button type="button" class="btn btn-lg btn-primary" onclick="window.location.href = '../php/cerrarSesion.php'">
         Cerrar Sesion

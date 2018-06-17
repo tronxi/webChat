@@ -17,7 +17,7 @@
                 where
                   c.nombre = '".$_SESSION['usuario']."')
            ordery by c.id_conversacion";*/
-           $query = "select * from conversacion"
+           $query = "select * from conversacion";
   $resul = mysqli_query($con, $query);
   while($fila = mysqli_fetch_array($resul))
   {

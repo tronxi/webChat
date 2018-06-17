@@ -9,11 +9,20 @@
 </head>
 
 <body>
-	<div class="container text-center">
-		<div class='card-deck mb-2 text-center' id=conversaciones>
+	<h1>
+		chat
+		<button type="button" class="btn btn-lg btn-primary" onclick="window.location.href = '../php/cerrarSesion.php'">
+        Cerrar Sesion
+      </button>
+	</h1>
+	<?php
+      echo "<p>registrado como ". $_SESSION['usuario']. "</p>";
+    ?>
+		<div class="container text-center">
+			<div class='card-deck mb-2 text-center' id=conversaciones>
 
+			</div>
 		</div>
-	</div>
 </body>
 
 </html>

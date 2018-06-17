@@ -8,9 +8,10 @@ var conexion;
 
 function buscar()
 {
+  var url = '../php/buscar.php';
   conexion1 = new XMLHttpRequest(url);
   conexion1.onreadystatechange = escribir;
-  conexion1.open("GET", '../php/buscar.php', true);
+  conexion1.open("GET", url, true);
   conexion1.send();
 }
 

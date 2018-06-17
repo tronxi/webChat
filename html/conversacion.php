@@ -8,7 +8,7 @@
 	<script src="../javascprit/conversacion.js"></script>
 </head>
 
-<body>
+<body class="text-center">
 	<h1>
 		chat
 		<button type="button" class="btn btn-lg btn-primary" onclick="window.location.href = '../php/cerrarSesion.php'">
@@ -16,6 +16,7 @@
       </button>
 	</h1>
 	<?php
+	  session_start();
       echo "<p>registrado como ". $_SESSION['usuario']. "</p>";
     ?>
 		<div class="container text-center">

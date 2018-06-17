@@ -15,9 +15,9 @@ function buscar()
   conexion1.send();
 }
 
-function abrirConversacion(nombreU)
+function abrirConversacion(nombre)
 {
-	console.log(nombreU.id);
+	console.log(nombre.id);
 }
 
 function procesarEventos()
@@ -30,7 +30,7 @@ function procesarEventos()
     for(var i in busquedaJson)
 	{
 		console.log(busquedaJson[i].nombre);
-		busquedaHTML += "<div class='card mb-4 box-shadow'><div class='card-header'><h4 class='my-0 font-weight-normal'>" + busquedaJson[i].nombre + "</h4></div><div class='card-body'><button type='button' class='btn btn-lg btn-block btn-outline-primary' onclick='abrirConversacion("+busquedaJson[i].nombre+")'>hablar</button></div></div>";
+		busquedaHTML += "<div class='card mb-4 box-shadow'><div class='card-header'><h4 class='my-0 font-weight-normal'>" + busquedaJson[i].nombre + "</h4></div><div class='card-body'><button type='button' class='btn btn-lg btn-block btn-outline-primary' id=".busquedaJson[i].nombre." onclick='abrirConversacion("+busquedaJson[i].nombre+")'>hablar</button></div></div>";
 
 	}
 	personas.innerHTML = busquedaHTML;

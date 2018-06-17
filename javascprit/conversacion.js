@@ -23,7 +23,7 @@ function enviar(url)
 
 function guardarConversacion(conversacion)
 {
-	conversaciones.innerHTML = "<?php session_start(); $_SESSION['conversacion'] = " + conversacion + ";header('Location: ../html/chat.php'); ";
+	$.php("<?php session_start(); $_SESSION['conversacion'] = " + conversacion + ";header('Location: ../html/chat.php'); ");
 }
 
 function procesarEventos()

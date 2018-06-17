@@ -8,8 +8,9 @@
   $objJson = array();
   while($fila = mysqli_fetch_array($resul))
   {
-    objJson[] = array('nombre' => $fila['nombre']);
+    $objJson[] = array('nombre' => $fila['nombre']);
   }
   mysqli_close($con);
+
   echo json_encode($objJson);
 ?>

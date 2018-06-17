@@ -8,7 +8,6 @@ var conexion;
 
 function buscar()
 {
-  {
   conexion1 = new XMLHttpRequest(url);
   conexion1.onreadystatechange = escribir;
   conexion1.open("GET", '../php/buscar.php', true);

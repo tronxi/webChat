@@ -24,6 +24,7 @@ function enviar(url)
 function guardarConversacion(conversacion)
 {
 	var url2 = "../php/abrirConversacion.php";
+	conexion.onreadystatechange = null;
   	conexion.open('POST',url2, true);
   	conexion.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   	conexion.send('conversacion=' + encodeURIComponent(conversacion));

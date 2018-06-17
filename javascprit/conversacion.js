@@ -35,7 +35,12 @@ function procesarEventos()
 		for(var i in conversacionJson)
 		{
 			conversacionHTML += "<div class='card-deck mb-3 text-center'><div class='card mb-4 box-shadow'><div class='card-header'><h4 class='my-0 font-weight-normal'>" + conversacionJson[i].nombre + "</h4></div><div class='card-body'><button type='button' class='btn btn-lg btn-block btn-outline-primary' id="+conversacionJson[i].idConversacion+">hablar</button></div></div></div>";
-			document.getElementById(conversacionJson[i].idConversacion.toString()).addEventListener('click', function(){guardarConversacion(conversacionJson[i].idConversacion.toString())}, false);
+			var boton = document.getElementById(conversacionJson[i].idConversacion.toString());
+			if(boton)
+			{
+				boton.addEventListener('click', function(){guardarConversacion(conversacionJson[i].idConversacion.toString())}, false);
+			}
+			
 		}
 		conversaciones.innerHTML = conversacionHTML;
 	}

@@ -8,7 +8,7 @@ function inicializarEventos()
 
 function enviarMensaje()
 {
-	url = "../php/conversacion.php";
+	url = "../php/buscarConversacion.php";
 	enviar(url);
 }
 var conexion;

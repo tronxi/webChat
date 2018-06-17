@@ -20,13 +20,13 @@ function enviar(url)
   conexion.onreadystatechange = procesarEventos;
   conexion.open("GET", url, true);
   conexion.send();
-  console.log("hola");
 }
 
 function procesarEventos()
 {
   if(conexion.readyState == 4)
   {
+      console.log("hola");
     conversaciones.innerHTML = conexion.responseText;
   }
 }

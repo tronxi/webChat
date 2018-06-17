@@ -24,7 +24,7 @@ function procesarEventos()
 {
   var busqueda = document.getElementById('personas');
   var busquedaHTML = ""; 
-  if(conexion.readyState == 4)
+  if(conexion1.readyState == 4)
   {
 	var busquedaJson = JSON.parse(conexion1.responseText);
     for(var i in busquedaJson)

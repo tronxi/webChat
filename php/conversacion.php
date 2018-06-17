@@ -3,21 +3,20 @@
   $con = mysqli_connect("192.168.0.5:3306", "tronxi", "tronxi97");
   mysqli_select_db($con, "chat");
 
-  /*$query = "select distinct
-              c.nombre, c.id_conversacion
-            from
-              conversacion c
-            where
-              id_conversacion != 0
-              and c.nombre != '".$_SESSION['usuario']."'
-              and id_conversacion in (select
-                c.id_conversacion
-                from
-                  conversacion c
-                where
-                  c.nombre = '".$_SESSION['usuario']."')
-           ordery by c.id_conversacion";*/
-           $query = "select * from conversacion";
+  $query = "SELECT DISTINCT
+    c.nombre, c.id_conversacion
+FROM
+    conversacion c
+WHERE
+    id_conversacion != 0
+        AND c.nombre != '".$_SESSION['usuario']."'
+        AND id_conversacion IN (SELECT
+            c.id_conversacion
+        FROM
+            conversacion c
+        WHERE
+            c.nombre = '".$_SESSION['usuario']."')
+ORDER BY c.id_conversacion";
   $resul = mysqli_query($con, $query);
   while($fila = mysqli_fetch_array($resul))
   {

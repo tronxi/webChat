@@ -10,7 +10,7 @@
     {
       session_start();
       $_SESSION['usuario'] = $_POST['usuario'];
-      header("Location: ../html/conversacion.php");
+      header("Location: ../html/conversacion.html");
     }
     else {
       echo "<!DOCTYPE html>

@@ -8,7 +8,7 @@ var conexion;
 
 function buscar()
 {
-  var url = '../php/buscar.php';
+  var url = '../php/buscarPersonas.php';
   conexion1 = new XMLHttpRequest(url);
   conexion1.onreadystatechange = procesarEventos;
   conexion1.open("GET", url, true);

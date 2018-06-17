@@ -9,8 +9,10 @@
 </head>
 
 <body>
-	<div id=conversaciones>
+	<div class="container">
+		<div id=conversaciones>
 
+		</div>
 	</div>
 </body>
 

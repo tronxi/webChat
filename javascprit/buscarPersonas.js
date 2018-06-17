@@ -15,9 +15,9 @@ function buscar()
   conexion1.send();
 }
 
-function abrirConversacion(nombre)
+function abrirConversacion(nombreU)
 {
-	console.log(nombre);
+	console.log(nombreU);
 }
 
 function procesarEventos()

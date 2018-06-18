@@ -7,14 +7,14 @@
 	mysqli_select_db($con, "chat"); $query = "";
 	//$resul = mysqli_query($con, $query);*/
 
-	$objJson = array();
-	$objJson[] = array('estado' => $_POST['persona']);
+	//$objJson = array();
+	//$objJson[] = array('estado' => $_POST['persona']);
 	/*while($fila = mysqli_fetch_array($resul))
 	{
 
 	}*/
 
 	//mysqli_close($con);
-
-	echo json_encode($objJson);
+echo "hola";
+	//echo json_encode($objJson);
 ?>

@@ -30,8 +30,8 @@ function procesarConversacion()
 {
 	if(conexion2.readyState == 2)
 	{
-		var resul = JSON.parse(conexion2.responseText);
-		console.log(resul.estado);
+		//var resul = JSON.parse(conexion2.responseText);
+		console.log(conexion2.responseText);
 	}
 }
 

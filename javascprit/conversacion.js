@@ -51,7 +51,7 @@ function procesarEventos()
 		for(var i in conversacionJson)
 		{
 			var nombre = conversacionJson[i].nombre;
-			if(conversacioJson[i].estado != 0)
+			if(conversacionJson[i].estado != 0)
 			{
 				nombre += "<h1>" + conversacionJson[i].estado + "</h1>";
 			}

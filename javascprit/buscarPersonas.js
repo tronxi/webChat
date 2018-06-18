@@ -24,7 +24,6 @@ function abrirConversacion(nombre)
   	conexion2.open('POST',url, true);
 	conexion2.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	conexion2.send('persona='+encodeURIComponent(nombre.id));
-	//prueba
 }
 
 function procesarConversacion()

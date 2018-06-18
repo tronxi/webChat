@@ -8,7 +8,7 @@
 	//$resul = mysqli_query($con, $query);
 
 	$objJson = array();
-	$objJson[] = array('estado' => 'ok');
+	$objJson[] = array('estado' => $_POST['persona']);
 	/*while($fila = mysqli_fetch_array($resul))
 	{
 

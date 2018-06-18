@@ -6,7 +6,7 @@
 	$con = mysqli_connect("192.168.0.5:3306", "tronxi", "tronxi97");
 	mysqli_select_db($con, "chat");
 	$query = "SELECT DISTINCT
-    c.nombre
+    c.nombre, c.id_conversacion as id
 FROM
     conversacion c
 WHERE
@@ -27,7 +27,7 @@ WHERE
 	{
 		if($fila['nombre'] == $_POST['persona'])
 		{
-			$estado = "si";
+			$estado = $fila['id'];
 		}
 	}
 	if($estado == "no")

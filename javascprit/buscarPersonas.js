@@ -6,6 +6,7 @@ function inicializarEventos()
 }
 var conexion1;
 var conexion2;
+var conexion3;
 
 function buscar()
 {
@@ -33,23 +34,23 @@ function procesarConversacion()
 		var resul = JSON.parse(conexion2.responseText);
 		for(var i in resul)
 		{
-			console.log(resul[i].estado);
+			guardarConversacion(resul[i].estado);
 		}
 	}
 }
 function guardarConversacion(conversacion)
 {
-	conexion2 = new XMLHttpRequest();
-	conexion2.onreadystatechange = abrirChat;
-	conexion2.open('POST', '../php/abrirConversacion.php', true);
-	conexion2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	conexion2.send('conversacion=' + encodeURIComponent(conversacion));
+	conexion3 = new XMLHttpRequest();
+	conexion3.onreadystatechange = abrirChat;
+	conexion3.open('POST', '../php/abrirConversacion.php', true);
+	conexion3.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	conexion3.send('conversacion=' + encodeURIComponent(conversacion));
 	console.log(conversacion);
 }
 
 function abrirChat()
 {
-	if(conexion2.readyState == 4)
+	if(conexion3.readyState == 4)
 	{
 		window.location = "../html/chat.php";
 	}

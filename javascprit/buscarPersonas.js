@@ -4,8 +4,8 @@ function inicializarEventos()
   buscar();
 }
 
-var conexion;
-
+var conexion1;
+var conexion2;
 function buscar()
 {
   var url = '../php/buscarPersonas.php';
@@ -18,7 +18,22 @@ function buscar()
 function abrirConversacion(nombre)
 {
 	console.log(nombre.id);
+	var url = "";
+	conexion2 = new XMLHttpRequest();
+	conexion2.onreadystatechange = procesarConversacion;
+  	conexion2.open('POST','url', true);
+	conexion2.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	conexion2.send('persona='+encodeURIComponent(nombre));
 	//prueba
+}
+
+function procesarConversacion()
+{
+	if(conexion2.readyState == 2)
+	{
+		var resul = JSON.parse(conexion2.responseText);
+		console.log(resul.estado);
+	}
 }
 
 function procesarEventos()

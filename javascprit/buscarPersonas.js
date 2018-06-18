@@ -17,7 +17,6 @@ function buscar()
 
 function abrirConversacion(nombre)
 {
-	console.log(nombre.id);
 	var url = "../php/crearConversacion.php";
 	conexion2 = new XMLHttpRequest();
 	conexion2.onreadystatechange = procesarConversacion;

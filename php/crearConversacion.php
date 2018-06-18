@@ -38,6 +38,9 @@ WHERE
 		{
 			$id = $fila['id'] + 1;
 		}
+		$query = "insert into conversacion values('".$_SESSION['usuario']."', ".id.");insert into conversacion values('".$_POST['persona']."', ".id.");";
+		$resul = mysqli_query($con, $query);
+
 		$estado = $id;
 	}
 	$objJson[] = array('estado' => $estado);

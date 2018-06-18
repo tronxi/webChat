@@ -25,7 +25,7 @@
   }
   else
   {
-    $query = "insert into usuario (nombre, contra) values ('".$_POST['usuario']."','".sha1( $_POST['password'])."')";
+    $query = "insert into usuario (nombre, contra) values ('".$usuario."','".sha1( $_POST['password'])."')";
     mysqli_query($con, $query);
     mysqli_close($con);
     header("Location: ../index.html");

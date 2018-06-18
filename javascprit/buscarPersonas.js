@@ -18,6 +18,7 @@ function buscar()
 function abrirConversacion(nombre)
 {
 	console.log(nombre.id);
+	//prueba
 }
 
 function procesarEventos()

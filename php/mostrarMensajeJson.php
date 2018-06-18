@@ -20,7 +20,11 @@
 				estado = 0
 			WHERE
 				id_conversacion = ".$_SESSION['conversacion']."
-					AND nombre = '".$_SESSION['usuario']."';";
+					AND nombre = (SELECT
+						nombre
+					WHERE
+						id_conversacion = ".$_SESSION['conversacion']."
+							AND nombre != '".$_SESSION['usuario']."');";
   mysqli_query($con, $query);
   mysqli_close($con);
 

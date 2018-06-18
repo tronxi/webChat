@@ -47,6 +47,7 @@ function procesarEventos()
 {
 	if(conexion.readyState == 4)
 	{
+		console.log("actualizado");
 		var conversacionJson = JSON.parse(conexion.responseText);
 		var conversacionHTML = "";
 		for(var i in conversacionJson)

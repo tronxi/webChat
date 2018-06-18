@@ -33,7 +33,7 @@ function escribir()
 		{
 			mensajes += mensajesJson[i].nombre + "- " + mensajesJson[i].fecha + ": " + mensajesJson[i].texto + "\n";
 		}
-		conversacion.value = conexion1.mensajes;
+		conversacion.value = conexion1.mensajes.toString();
 		conversacion.scrollTop = conversacion.scrollHeight;
 	}
 }

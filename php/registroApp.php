@@ -1,5 +1,5 @@
 <?php
-  include 'contraseñas.php';
+  include 'datos.php';
   $con = mysqli_connect($host, $usuario, $contraseña);
   mysqli_select_db($con, $bd);
 

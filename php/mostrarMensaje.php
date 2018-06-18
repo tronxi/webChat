@@ -1,7 +1,8 @@
 <?php
+  $include 'datos.php';
   session_start();
   header('Content-Type: text/html; charset=utf-8');
-  $include 'contraseñas.php';
+
   $con = mysqli_connect($host, $usuario, $contraseña);
   mysqli_select_db($con, $bd);
 

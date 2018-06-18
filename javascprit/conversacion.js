@@ -60,5 +60,5 @@ function procesarEventos()
 
 function htmlEntities(str)
 {
-	return String(str).replace(/&/g, ' ').replace(/</g, ' ').replace(/>/g, ' ').replace(/"/g, ' ').replace(/\//g,' ');;
+	return String(str).replace(/&/g, ' ').replace(/</g, ' ').replace(/>/g, ' ').replace(/"/g, ' ').replace(/\//g,' ').replace(" ","_");
 }

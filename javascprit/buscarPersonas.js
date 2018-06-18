@@ -2,8 +2,13 @@ addEventListener('load', inicializarEventos, false);
 
 function inicializarEventos()
 {
-	buscar();
+	//buscar();
 }
+var actualizar = setInterval(function()
+{
+  buscar()
+}, 500);
+
 var conexion1;
 var conexion2;
 var conexion3;

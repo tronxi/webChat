@@ -8,7 +8,7 @@
 
 	$query = "UPDATE conversacion
 			SET
-				estado = 1
+				estado = estado + 1
 			WHERE
 				id_conversacion = ".$_SESSION['conversacion']."
 					AND nombre = (SELECT

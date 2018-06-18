@@ -3,7 +3,6 @@ addEventListener('load', inicializarEventos, false);
 function inicializarEventos()
 {
 	var conversaciones = document.getElementById('conversaciones');
-	//enviarMensaje();
 }
 var actualizar = setInterval(function()
 {
@@ -47,7 +46,6 @@ function procesarEventos()
 {
 	if(conexion.readyState == 4)
 	{
-		console.log("actualizado");
 		var conversacionJson = JSON.parse(conexion.responseText);
 		var conversacionHTML = "";
 		for(var i in conversacionJson)

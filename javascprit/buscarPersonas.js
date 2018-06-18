@@ -2,7 +2,6 @@ addEventListener('load', inicializarEventos, false);
 
 function inicializarEventos()
 {
-	//buscar();
 }
 var actualizar = setInterval(function()
 {

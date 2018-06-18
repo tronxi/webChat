@@ -1,4 +1,5 @@
 <?php
+  session_start();
   header('Content-Type: text/html; charset=utf-8');
   include 'datos.php';
   $con = mysqli_connect($host, $usuario, $contraseña);

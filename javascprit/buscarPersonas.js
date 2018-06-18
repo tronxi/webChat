@@ -18,12 +18,12 @@ function buscar()
 function abrirConversacion(nombre)
 {
 	console.log(nombre.id);
-	var url = "";
+	var url = "../php/crearConversacion.php";
 	conexion2 = new XMLHttpRequest();
 	conexion2.onreadystatechange = procesarConversacion;
   	conexion2.open('POST','url', true);
 	conexion2.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-	conexion2.send('persona='+encodeURIComponent(nombre));
+	conexion2.send('persona='+encodeURIComponent(nombre.id));
 	//prueba
 }
 

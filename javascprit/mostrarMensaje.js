@@ -32,7 +32,6 @@ function escribir()
 		for(var i in mensajesJson)
 		{
 			mensajes += mensajesJson[i].nombre + "- " + mensajesJson[i].fecha + ": " + mensajesJson[i].texto + "\n";
-			console.log(mensajes);
 		}
 		conversacion.value = mensajes;
 		conversacion.scrollTop = conversacion.scrollHeight;

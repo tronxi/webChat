@@ -5,7 +5,7 @@
   mysqli_select_db($con, $bd);
 
   $query = "SELECT DISTINCT
-    c.nombre, c.id_conversacion, MAX(fecha) as ultimaFecha
+    c.nombre, c.id_conversacion, MAX(fecha) as ultimaFecha, estado
 FROM
     conversacion c
         INNER JOIN
@@ -27,7 +27,8 @@ ORDER BY ultimaFecha DESC;";
   while($fila = mysqli_fetch_array($resul))
   {
     $objJson[] = array('nombre' => $fila['nombre'],
-					  'idConversacion' => $fila['id_conversacion']);
+					  'idConversacion' => $fila['id_conversacion'],
+					  'estado' => $fila['estado']);
   }
   mysqli_close($con);
   echo json_encode($objJson);

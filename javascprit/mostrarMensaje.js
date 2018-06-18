@@ -16,9 +16,9 @@ var conexion1;
 
 function mostrar(url)
 {
-	conexion1 = new XMLHttpRequest(url);
+	conexion1 = new XMLHttpRequest('../php/mostrarMensajeJson.php');
 	conexion1.onreadystatechange = escribir;
-	conexion1.open("GET", url, true);
+	conexion1.open("GET", '../php/mostrarMensajeJson.php', true);
 	conexion1.send();
 }
 

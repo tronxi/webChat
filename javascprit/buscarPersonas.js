@@ -31,7 +31,10 @@ function procesarConversacion()
 	if(conexion2.readyState == 4)
 	{
 		var resul = JSON.parse(conexion2.responseText);
-		console.log(resul.estado);
+		for(var i in resul)
+		{
+			console.log(resul[i].estado);
+		}
 	}
 }
 

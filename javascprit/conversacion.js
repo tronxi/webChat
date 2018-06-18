@@ -3,8 +3,12 @@ addEventListener('load', inicializarEventos, false);
 function inicializarEventos()
 {
 	var conversaciones = document.getElementById('conversaciones');
-	enviarMensaje();
+	//enviarMensaje();
 }
+var actualizar = setInterval(function()
+{
+  enviarMensaje()
+}, 500);
 
 function enviarMensaje()
 {

@@ -30,7 +30,7 @@ WHERE
 			$estado = "si";
 		}
 	}
-	if(estado == "no")
+	if($estado == "no")
 	{
 		$query = "SELECT MAX(id_conversacion) as id FROM conversacion;";
 		$resul = mysqli_query($con, $query);
@@ -39,7 +39,6 @@ WHERE
 			$id = $fila['id'] + 1;
 		}
 		$estado = $id;
-
 	}
 	$objJson[] = array('estado' => $estado);
 	mysqli_close($con);

@@ -28,10 +28,10 @@ function abrirConversacion(nombre)
 
 function procesarConversacion()
 {
-	if(conexion2.readyState == 2)
+	if(conexion2.readyState == 4)
 	{
-		//var resul = JSON.parse(conexion2.responseText);
-		console.log(conexion2.responseText);
+		var resul = JSON.parse(conexion2.responseText);
+		console.log(resul.estado);
 	}
 }
 

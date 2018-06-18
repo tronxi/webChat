@@ -4,7 +4,7 @@
   $con = mysqli_connect($host, $usuario, $contraseña);
   mysqli_select_db($con, $bd);
 
-  $query = "select nombre, texto, fecha from mensaje";
+  $query = "select nombre, texto, fecha from mensajewhere id_conversacion = ".$_SESSION['conversacion']."";
   $resul = mysqli_query($con, $query);
   $objJson = array();
   while($fila = mysqli_fetch_array($resul))

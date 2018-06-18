@@ -1,8 +1,10 @@
 <?php
   session_start();
   header('Content-Type: text/html; charset=utf-8');
-  $con = mysqli_connect("192.168.0.5:3306", "tronxi", "tronxi97");
-  mysqli_select_db($con, "chat");
+  $include 'contraseñas.php';
+  $con = mysqli_connect($host, $usuario, $contraseña);
+  mysqli_select_db($con, $bd);
+
   $query = "select nombre, texto, fecha from mensaje where id_conversacion = ".$_SESSION['conversacion']."";
   $resul = mysqli_query($con, $query);
 

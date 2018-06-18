@@ -1,7 +1,8 @@
 <?php
   session_start();
-  $con = mysqli_connect("192.168.0.5:3306", "tronxi", "tronxi97");
-  mysqli_select_db($con, "chat");
+  include 'contraseñas.php';
+  $con = mysqli_connect($host, $usuario, $contraseña);
+  mysqli_select_db($con, $bd);
 
   $query = "SELECT DISTINCT
     c.nombre, c.id_conversacion, MAX(fecha) as ultimaFecha

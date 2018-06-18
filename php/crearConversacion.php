@@ -2,9 +2,10 @@
  	session_start();
 
 	header('Content-Type: text/html; charset=utf-8');
+	include 'contraseñas.php';
+  	$con = mysqli_connect($host, $usuario, $contraseña);
+  	mysqli_select_db($con, $bd);
 
-	$con = mysqli_connect("192.168.0.5:3306", "tronxi", "tronxi97");
-	mysqli_select_db($con, "chat");
 	$query = "SELECT DISTINCT
     c.nombre, c.id_conversacion as id
 FROM

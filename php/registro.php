@@ -1,6 +1,8 @@
 <?php
-  $con = mysqli_connect("192.168.0.5:3306", "tronxi", "tronxi97");
-  mysqli_select_db($con, "chat");
+  include 'contraseñas.php';
+  $con = mysqli_connect($host, $usuario, $contraseña);
+  mysqli_select_db($con, $bd);
+
   $usuario = $_POST['usuario'];
   $usuario = eliminar_simbolos($usuario);
   $query = "select nombre, contra from usuario where nombre = '".$usuario."'";

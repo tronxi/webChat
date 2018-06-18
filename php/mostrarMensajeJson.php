@@ -14,6 +14,13 @@
                         'fecha' => $fila['fecha'],
                       'texto' => $fila['texto']);
   }
+
+  $query = "UPDATE conversacion
+			SET
+				estado = 0
+			WHERE
+				id_conversacion = ".$_SESSION['conversacion']."
+					AND nombre = '".$_SESSION['usuario']."';";
   mysqli_close($con);
 
   echo json_encode($objJson);

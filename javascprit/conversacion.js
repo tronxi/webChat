@@ -47,7 +47,7 @@ function procesarEventos()
 		var conversacionHTML = "";
 		for(var i in conversacionJson)
 		{
-			conversacionJson[i].nombre = htmlEntities(conversacionJson[i].nombre);
+			//conversacionJson[i].nombre = htmlEntities(conversacionJson[i].nombre);
 			conversacionHTML += "<div class='card mb-4 box-shadow'><div class='card-header'><h4 class='my-0 font-weight-normal'>" + conversacionJson[i].nombre + "</h4></div><div class='card-body'><button type='button' class='btn btn-lg btn-block btn-outline-primary' id=" + conversacionJson[i].idConversacion.toString() + " onclick='guardarConversacion(" + conversacionJson[i].idConversacion.toString() + ")'>hablar</button></div></div>";
 		}
 		conversaciones.innerHTML = conversacionHTML;

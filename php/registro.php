@@ -1,8 +1,9 @@
 <?php
   $con = mysqli_connect("192.168.0.5:3306", "tronxi", "tronxi97");
   mysqli_select_db($con, "chat");
-
-  $query = "select nombre, contra from usuario where nombre = '".$_POST['usuario']."'";
+  $usuario = $_POST['usuario'];
+  $usuario = eliminar_simbolos($usuario);
+  $query = "select nombre, contra from usuario where nombre = '".$usuario."'";
   $resul = mysqli_query($con, $query);
   if($fila = mysqli_fetch_array($resul))
   {
@@ -30,4 +31,58 @@
     header("Location: ../index.html");
   }
   mysqli_close($con);
+	function eliminar_simbolos($string){
+
+    $string = trim($string);
+
+    $string = str_replace(
+        array('á', 'à', 'ä', 'â', 'ª', 'Á', 'À', 'Â', 'Ä'),
+        array('a', 'a', 'a', 'a', 'a', 'A', 'A', 'A', 'A'),
+        $string
+    );
+
+    $string = str_replace(
+        array('é', 'è', 'ë', 'ê', 'É', 'È', 'Ê', 'Ë'),
+        array('e', 'e', 'e', 'e', 'E', 'E', 'E', 'E'),
+        $string
+    );
+
+    $string = str_replace(
+        array('í', 'ì', 'ï', 'î', 'Í', 'Ì', 'Ï', 'Î'),
+        array('i', 'i', 'i', 'i', 'I', 'I', 'I', 'I'),
+        $string
+    );
+
+    $string = str_replace(
+        array('ó', 'ò', 'ö', 'ô', 'Ó', 'Ò', 'Ö', 'Ô'),
+        array('o', 'o', 'o', 'o', 'O', 'O', 'O', 'O'),
+        $string
+    );
+
+    $string = str_replace(
+        array('ú', 'ù', 'ü', 'û', 'Ú', 'Ù', 'Û', 'Ü'),
+        array('u', 'u', 'u', 'u', 'U', 'U', 'U', 'U'),
+        $string
+    );
+
+    $string = str_replace(
+        array('ñ', 'Ñ', 'ç', 'Ç'),
+        array('n', 'N', 'c', 'C',),
+        $string
+    );
+
+    $string = str_replace(
+        array("\\", "¨", "º", "-", "~",
+             "#", "@", "|", "!", "\"",
+             "·", "$", "%", "&", "/",
+             "(", ")", "?", "'", "¡",
+             "¿", "[", "^", "<code>", "]",
+             "+", "}", "{", "¨", "´",
+             ">", "< ", ";", ",", ":",
+             ".", " "),
+        ' ',
+        $string
+    );
+return $string;
+}
 ?>

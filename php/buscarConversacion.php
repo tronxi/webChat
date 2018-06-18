@@ -7,7 +7,7 @@
     c.nombre, c.id_conversacion, MAX(fecha) as ultimaFecha
 FROM
     conversacion c
-        LEFT JOIN
+        INNER JOIN
     mensaje m ON c.id_conversacion = m.id_conversacion
 WHERE
     c.id_conversacion != 0

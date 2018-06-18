@@ -22,7 +22,7 @@
       echo "<p>registrado como ". $_SESSION['usuario']. "</p>";
     ?>
 		<div class="container text-center">
-			<div class='card-deck mb-2 text-center' id="conversaciones">
+			<div class='row grid-groud-item' id="conversaciones">
 
 			</div>
 		</div>

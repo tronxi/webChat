@@ -3,7 +3,13 @@
 	include 'datos.php';
 	$con = mysqli_connect($host, $usuario, $contraseña); mysqli_select_db($con, $bd);
 
-	$query = "insert into mensaje (nombre, texto, fecha, id_conversacion) values ('".$_SESSION['usuario']."', '".$_POST['mensaje']."', '".date('Y/m/d H:i:s')."', ".$_SESSION['conversacion'].")";
+	$algorithm = MCRYPT_BLOWFISH;
+	$key = 'hola';
+	$mode = MCRYPT_MODE_CBC;
+	$iv = mcrypt_create_iv(mcrypt_get_iv_size($algorithm, $mode), MCRYPT_DEV_URANDOM);
+	$mensajeCifrado = mcrypt_encrypt($algorithm, $key, $_POST['mensaje'], $mode, $iv);
+
+	$query = "insert into mensaje (nombre, texto, fecha, id_conversacion) values ('".$_SESSION['usuario']."', '".mensajeCifrado."', '".date('Y/m/d H:i:s')."', ".$_SESSION['conversacion'].")";
 	mysqli_query($con, $query);
 
 	$query = "UPDATE conversacion

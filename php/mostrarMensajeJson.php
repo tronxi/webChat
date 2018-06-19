@@ -5,6 +5,11 @@
   $con = mysqli_connect($host, $usuario, $contraseña);
   mysqli_select_db($con, $bd);
 
+	$algorithm = MCRYPT_BLOWFISH;
+	$key = 'hola';
+	$mode = MCRYPT_MODE_CBC;
+	$iv = mcrypt_create_iv(mcrypt_get_iv_size($algorithm, $mode), MCRYPT_DEV_URANDOM);
+
   $query = "select nombre, texto, fecha from mensaje where id_conversacion = ".$_SESSION['conversacion']."";
   $resul = mysqli_query($con, $query);
   $objJson = array();
@@ -12,7 +17,7 @@
   {
     $objJson[] = array('nombre' => $fila['nombre'],
                         'fecha' => $fila['fecha'],
-                      'texto' => $fila['texto']);
+                      'texto' => mcrypt_decrypt($algorithm, $key, $fila['texto'], $mode, $iv););
   }
 
   $query = "UPDATE conversacion

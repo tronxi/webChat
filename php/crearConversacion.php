@@ -39,10 +39,10 @@ WHERE
 		{
 			$id = $fila['id'] + 1;
 		}
-		$query = "insert into conversacion values('".$_SESSION['usuario']."', ".$id.");";
+		$query = "insert into conversacion values('".$_SESSION['usuario']."', ".$id.", 0);";
 		mysqli_query($con, $query);
 
-		$query = "insert into conversacion values('".$_POST['persona']."', ".$id.");";
+		$query = "insert into conversacion values('".$_POST['persona']."', ".$id.", 0);";
 		mysqli_query($con, $query);
 
 		$estado = $id;

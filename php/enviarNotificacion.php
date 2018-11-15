@@ -17,8 +17,8 @@
     $fields = array('to'=>$keyToken, 'notification'=>array('title'=>$title, 'body'=>$message));
     $payload = json_encode($fields);
     // Abrir la sesión
-    echo "hola";
     $curl_session = curl_init();
+    echo "hola";
     // Definir la URL a la que se le hará el post
     curl_setopt($curl_session, CURLOPT_URL, $path_to_fcm);
     // Indicar el tipo de petición: POST

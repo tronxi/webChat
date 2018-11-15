@@ -18,7 +18,6 @@
     $payload = json_encode($fields);
     // Abrir la sesión
     $curl_session = curl_init();
-    echo "hola";
     // Definir la URL a la que se le hará el post
     curl_setopt($curl_session, CURLOPT_URL, $path_to_fcm);
     // Indicar el tipo de petición: POST
@@ -26,6 +25,7 @@
     curl_setopt($curl_session, CURLOPT_HTTPHEADER, $headers);
     // Recibimos una respuesta y la guardamos en una variable
     curl_setopt($curl_session, CURLOPT_RETURNTRANSFER, true);
+    echo "hola";
     $remote_server_output = curl_exec($curl_session);
     curl_setopt($curl_session, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($curl_session, CURLOPT_IPRESOLVE, CURLOPT_IPRESOLVE_v4);

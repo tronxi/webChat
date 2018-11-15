@@ -15,7 +15,7 @@
 				id_conversacion = ".$_SESSION['conversacion']."
 					AND nombre = '".$_SESSION['usuario']."'";
 	$resul = mysqli_query($con, $query);
-	$query = "SELECT u.nombre as nombre, u.token as token from usuario u, conversacion c where u.nombre = c.nombre and c.id_conversacion = ".$_POST['conversacion']." and u.nombre != '".$_POST['usuario']."';";
+	$query = "SELECT u.nombre as nombre, u.token as token from usuario u, conversacion c where u.nombre = c.nombre and c.id_conversacion = ".$_SESSION['conversacion']." and u.nombre != '".$_SESSION['usuario']."';";
 	$resul = mysqli_query($con, $query);
 	$tokenNecesario = "";
 	while($fila = mysqli_fetch_array($resul))
@@ -61,7 +61,7 @@
 		$token= $tokenNecs;
 	
 			$notification = [
-				'title' =>$_POST['usuario']."'",
+				'title' =>$_SESSION['usuario']."'",
 				'body' =>  $_POST['mensaje']
 			];
 			$extraNotificationData = ["message" => $notification,"moredata" =>'dd'];

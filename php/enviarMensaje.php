@@ -61,7 +61,7 @@
 		$token= $tokenNecs;
 	
 			$notification = [
-				'title' =>$_SESSION['usuario']."'",
+				'title' =>$_SESSION['usuario'],
 				'body' =>  $_POST['mensaje']
 			];
 			$extraNotificationData = ["message" => $notification,"moredata" =>'dd'];

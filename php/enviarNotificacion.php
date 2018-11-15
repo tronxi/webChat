@@ -1,6 +1,6 @@
 <?php
     $message = "hola"; // El mensaje que vayas a enviar
-    $title = "gitulo"; // Título de la notificación
+    $title = "titulo"; // Título de la notificación
     $path_to_fcm = "https://fcm.googleapis.com/fcm/send";
     $server_key="AAAA4iUUfRc:APA91bFSDG8l61UvTH3y3keSmNfTodFgaH9rNj2IE84z3Ob9YDtZqLkuGFNEv0G3kZnsj_8XYo5I0CCtQ9ZR9ZX1YIgtu01o7ePDcyU8lQuD6W6X-enuPL85zJsFnDTWXB5O61irybXO";
     //$sql = “Tu query donde buscas el Token del usuario que te interesa”;
@@ -8,12 +8,12 @@
     //$row = mysqli_fetch_row($result); 
     $keyToken = "fM_EIbnlLkI:APA91bFDYErasu18pKFh6JXZCJ8m9uW5vEyjuJf-Geen02AWpKIlyzIaM55GbolC6IWCjuRJDj7NSwMYt_w9KqtJ48hIXkpCSu72FdMDWEGDvSRUKJXd8gCYh8lOEhcsa9mg8Gbo69Wg"; // Obtención del Token
     $headers = array( 
-    ‘Authorization:key=’ .$server_key,
-    ‘Content-Type:application/json’,
-    ‘Content-Length: 0’ 
+    'Authorization:key=' .$server_key,
+    'Content-Type:application/json',
+    'Content-Length: 0’'
     );
     // Para un solo token, si es para varios usar “registration_ids” en vez de “to”.
-    $fields = array(‘to’=>$keyToken, notification’=>array(‘title’=>$title, ‘body’=>$message));
+    $fields = array('to'=>$keyToken, 'notification'=>array('title'=>$title, 'body'=>$message));
     $payload = json_encode($fields);
     // Abrir la sesión
     $curl_session = curl_init();

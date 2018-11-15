@@ -22,6 +22,7 @@
   	{
 		$tokenNecesario = $fila['token'];
 	}
+	console_log("gola");
 	enviar($tokenNecesario);
 	mysqli_close($con);
 
@@ -47,6 +48,11 @@
 
 		return $output;
 	}
+	function console_log( $data ){
+		echo '<script>';
+		echo 'console.log('. json_encode( $data ) .')';
+		echo '</script>';
+	  }
 
 	function enviar($tokenNecs)
 	{

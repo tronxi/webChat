@@ -11,6 +11,8 @@
     {
       session_start();
       $_SESSION['usuario'] = $_POST['usuario'];
+      $query = "update usuario set token = '".$_POST['token']."' where nombre = '".$_POST['usuario']."';";
+      $resul = mysqli_query($con, $query);
       echo "ok";
     }
     else {

@@ -36,5 +36,5 @@
     curl_close($curl_session);
     // Mostrar el resultado
     print_r($remote_server_output);
-    echo "hola";
+    echo "hola " + $remote_server_output;
 ?>

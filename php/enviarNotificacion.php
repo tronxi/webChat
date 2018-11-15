@@ -14,7 +14,6 @@
     $message->addRecipient(new Device('fM_EIbnlLkI:APA91bFDYErasu18pKFh6JXZCJ8m9uW5vEyjuJf-Geen02AWpKIlyzIaM55GbolC6IWCjuRJDj7NSwMYt_w9KqtJ48hIXkpCSu72FdMDWEGDvSRUKJXd8gCYh8lOEhcsa9mg8Gbo69Wg'));
     $message
         ->setNotification(new Notification('php', 'soy una puta maquina'))
-        ->setData(['key' => 'value'])
     ;
 
     $response = $client->send($message);

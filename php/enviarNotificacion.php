@@ -28,7 +28,6 @@
     $remote_server_output = curl_exec($curl_session);
     curl_setopt($curl_session, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($curl_session, CURLOPT_IPRESOLVE, CURLOPT_IPRESOLVE_v4);
-    echo "hola";
     // Definir cada uno de los parámetros
     curl_setopt($curl_session, CURLOPT_POSTFIELDS, $payload);
     //$result = curl_exeec($curl_session);
@@ -37,4 +36,5 @@
     curl_close($curl_session);
     // Mostrar el resultado
     print_r($remote_server_output);
+    echo "hola";
 ?>

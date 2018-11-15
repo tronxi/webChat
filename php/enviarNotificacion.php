@@ -1,4 +1,5 @@
 <?php
+    echo("hola")
     $message = "hola"; // El mensaje que vayas a enviar
     $title = "titulo"; // Título de la notificación
     $path_to_fcm = "https://fcm.googleapis.com/fcm/send";

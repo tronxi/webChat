@@ -22,7 +22,7 @@
   	{
 		$tokenNecesario = $fila['token'];
 	}
-	console_log("gola");
+
 	enviar($tokenNecesario);
 	mysqli_close($con);
 

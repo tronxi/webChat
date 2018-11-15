@@ -14,10 +14,10 @@
 			WHERE
 				id_conversacion = ".$_POST['conversacion']."
 					AND nombre = '".$_POST['usuario']."'";
-	$resul = mysqli_query($con, $query);
+	mysqli_query($con, $query);
 
 	$query = "SELECT u.nombre as nombre, u.token as token from usuario u, conversacion c where u.nombre = c.nombre and c.id_conversacion = ".$_POST['conversacion']." and u.nombre != '".$_POST['usuario']."';";
-	mysqli_query($con, $query);
+	$resul = mysqli_query($con, $query);
 	$tokenNecesario = "";
 	while($fila = mysqli_fetch_array($resul))
   	{

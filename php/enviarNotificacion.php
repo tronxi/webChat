@@ -1,5 +1,5 @@
 <?php
-    echo "hola";
+    
     $message = "hola"; // El mensaje que vayas a enviar
     $title = "titulo"; // Título de la notificación
     $path_to_fcm = "https://fcm.googleapis.com/fcm/send";
@@ -17,6 +17,7 @@
     $fields = array('to'=>$keyToken, 'notification'=>array('title'=>$title, 'body'=>$message));
     $payload = json_encode($fields);
     // Abrir la sesión
+    echo "hola";
     $curl_session = curl_init();
     // Definir la URL a la que se le hará el post
     curl_setopt($curl_session, CURLOPT_URL, $path_to_fcm);

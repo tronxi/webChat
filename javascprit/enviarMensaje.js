@@ -8,7 +8,10 @@ function inicializarEventos()
 function enviarMensaje(e)
 {
   e.preventDefault();
-  enviar();
+  if(document.getElementById('mensaje').value.localCompare("") != 0)
+  {
+    enviar();
+  }
 }
 
 function getDatos()

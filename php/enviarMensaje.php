@@ -3,7 +3,7 @@
 	include 'datos.php';
 	$con = mysqli_connect($host, $usuario, $contraseña); mysqli_select_db($con, $bd);
 	$mensajeCifrado = $_POST['mensaje'];
-	$query = "insert into mensaje (nombre, texto, fecha, id_conversacion) values ('".$_SESSION['usuario']."', AES_ENCRYOT('".$mensajeCifrado."', '".$key."'),'".date('Y/m/d H:i:s')."', ".$_SESSION['conversacion'].")";
+	$query = "insert into mensaje (nombre, texto, fecha, id_conversacion) values ('".$_SESSION['usuario']."', AES_ENCRYPT('".$mensajeCifrado."', '".$key."'),'".date('Y/m/d H:i:s')."', ".$_SESSION['conversacion'].")";
 	mysqli_query($con, $query);
 
 	$query = "UPDATE conversacion

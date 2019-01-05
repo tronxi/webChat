@@ -20,7 +20,7 @@ class AES
         $data = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $this->key, base64_decode($data), MCRYPT_MODE_CBC, $this->iv);
         $padding = ord($data[strlen($data) - 1]);
 		//return substr($data, 0, -$padding);
-		return openssl_decrypt(base64_decode($data), 'aes-256-cbc', $this->key, OPENSSL_RAW_DATA, $this->iv);
+		return openssl_decrypt(base64_decode($data), 'aes-256-cbc', $this->key, 0, $this->iv);
     }
 }
 	session_start();
@@ -31,7 +31,7 @@ class AES
 	$method = 'aes-256-cbc';
 	var $key2 = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
     var $iv2 = 'AAAAAAAAAAAAAAAA';
-	$mensajeCifrado2 = openssl_encrypt($_POST['mensaje'], $method, $key2, OPENSSL_RAW_DATA, $iv2);
+	$mensajeCifrado2 = openssl_encrypt($_POST['mensaje'], $method, $key2, 0, $iv2);
 	$query = "insert into mensaje (nombre, texto, fecha, id_conversacion) values ('".$_SESSION['usuario']."', '".$mensajeCifrado."', '".date('Y/m/d H:i:s')."', ".$_SESSION['conversacion'].")";
 	mysqli_query($con, $query);
 

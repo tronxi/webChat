@@ -3,8 +3,7 @@
 	include 'datos.php';
 	include 'MagicCrypt.php';
 	$con = mysqli_connect($host, $usuario, $contraseña); mysqli_select_db($con, $bd);
-	$mc = new MagicCrypt($key, 256);
-	use org\magiclen\magiccrypt\MagicCrypt;
+	$mc = new MagicCrypt('magickey', 256);
 	$mensajeCifrado = $mc->encrypt($_POST['mensaje']);
 	$query = "insert into mensaje (nombre, texto, fecha, id_conversacion) values ('".$_SESSION['usuario']."', '".$mensajeCifrado."', '".date('Y/m/d H:i:s')."', ".$_SESSION['conversacion'].")";
 	mysqli_query($con, $query);

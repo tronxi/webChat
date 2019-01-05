@@ -1,6 +1,5 @@
 <?php
- require('MagicCrypt.php');
- use org\magiclen\magiccrypt\MagicCrypt;
+ include 'MagicCrypt.php';
   session_start();
   header('Content-Type: text/html; charset=utf-8');
   include 'datos.php';

@@ -1,8 +1,7 @@
 <?php
 	session_start();
 	include 'datos.php';
-	require('MagicCrypt.php');
-	use org\magiclen\magiccrypt\MagicCrypt;
+	include 'MagicCrypt.php';
 	$con = mysqli_connect($host, $usuario, $contraseña); mysqli_select_db($con, $bd);
 	$mc = new MagicCrypt($key, 256);
 	$mensajeCifrado = $mc->encrypt($_POST['mensaje']);

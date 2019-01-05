@@ -33,7 +33,7 @@
 
   	function decrypt($ciphered)
     {
-		$password = $secret_key;
+		$password = hash('sha256', $secret_key);;
         $iv_size    = openssl_cipher_iv_length(AES_METHOD);
         $data       = explode(":", $ciphered);
         $iv         = hex2bin($data[0]);

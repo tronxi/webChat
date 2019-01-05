@@ -25,7 +25,7 @@
 
 	function encrypt($message)
 	{
-		$password = $secret_key;
+		$password = hash('sha256', $secret_key);;
 		
 		$iv_size        = openssl_cipher_iv_length(AES_METHOD);
 		$iv             = openssl_random_pseudo_bytes($iv_size);

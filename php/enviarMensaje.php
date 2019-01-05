@@ -3,7 +3,7 @@
 	include 'datos.php';
 	$con = mysqli_connect($host, $usuario, $contraseña); mysqli_select_db($con, $bd);
 
-	$mensajeCifrado = encrypt_decrypt('encrypt', $_POST['mensaje']);
+	$mensajeCifrado = encrypt($_POST['mensaje']);
 
 	$query = "insert into mensaje (nombre, texto, fecha, id_conversacion) values ('".$_SESSION['usuario']."', '".$mensajeCifrado."', '".date('Y/m/d H:i:s')."', ".$_SESSION['conversacion'].")";
 	mysqli_query($con, $query);
@@ -23,10 +23,25 @@
 		$tokenNecesario = $fila['token'];
 	}
 
+	function encrypt($message)
+	{
+		$password = $secret_key;
+		if (OPENSSL_VERSION_NUMBER <= 268443727) {
+			throw new RuntimeException('OpenSSL Version too old, vulnerability to Heartbleed');
+		}
+		
+		$iv_size        = openssl_cipher_iv_length(AES_METHOD);
+		$iv             = openssl_random_pseudo_bytes($iv_size);
+		$ciphertext     = openssl_encrypt($message, AES_METHOD, $password, OPENSSL_RAW_DATA, $iv);
+		$ciphertext_hex = bin2hex($ciphertext);
+		$iv_hex         = bin2hex($iv);
+		return "$iv_hex:$ciphertext_hex";
+	}
+
 	enviar($tokenNecesario);
 	mysqli_close($con);
 
-	function encrypt_decrypt($action, $string)
+	/*function encrypt_decrypt($action, $string)
 	{
 		$output = false;
 
@@ -47,7 +62,7 @@
 		}
 
 		return $output;
-	}
+	}*/
 	function console_log( $data ){
 		echo '<script>';
 		echo 'console.log('. json_encode( $data ) .')';

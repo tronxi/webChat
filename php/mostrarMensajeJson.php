@@ -2,6 +2,7 @@
   session_start();
   header('Content-Type: text/html; charset=utf-8');
   include 'datos.php';
+  define('AES_METHOD', 'aes-256-cbc');
   $con = mysqli_connect($host, $usuario, $contraseña);
   mysqli_select_db($con, $bd);
 
@@ -12,7 +13,7 @@
   {
     $objJson[] = array('nombre' => $fila['nombre'],
                         'fecha' => $fila['fecha'],
-                      'texto' => encrypt_decrypt('decrypt', $fila['texto']));
+                      'texto' => decrypt($fila['texto']));
   }
 
   $query = "UPDATE conversacion
@@ -30,7 +31,17 @@
 
   echo json_encode($objJson);
 
-    function encrypt_decrypt($action, $string)
+  	function decrypt($ciphered)
+    {
+		$password = $secret_key;
+        $iv_size    = openssl_cipher_iv_length(AES_METHOD);
+        $data       = explode(":", $ciphered);
+        $iv         = hex2bin($data[0]);
+        $ciphertext = hex2bin($data[1]);
+        return openssl_decrypt($ciphertext, AES_METHOD, $password, OPENSSL_RAW_DATA, $iv);
+    }
+
+    /*function encrypt_decrypt($action, $string)
 	{
 		$output = false;
 
@@ -51,5 +62,5 @@
 		}
 
 		return $output;
-	}
+	}*/
 ?>

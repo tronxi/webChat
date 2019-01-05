@@ -10,8 +10,7 @@ class AES
         // return openssl_encrypt($data, 'aes-256-cbc', $this->key, OPENSSL_RAW_DATA, $this->iv);
         $padding = 16 - (strlen($data) % 16);
         $data .= str_repeat(chr($padding), $padding);
-        return mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $this->key, $data, MCRYPT_MODE_CBC, $this->iv);
-    }
+		return openssl_encrypt($data, 'aes-256-cbc', $this->key, OPENSSL_RAW_DATA, $this->iv);    }
  
     function decryptToken($data)
     {
@@ -19,7 +18,8 @@ class AES
         // return openssl_decrypt(base64_decode($data), 'aes-256-cbc', $this->key, OPENSSL_RAW_DATA, $this->iv);
         $data = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $this->key, base64_decode($data), MCRYPT_MODE_CBC, $this->iv);
         $padding = ord($data[strlen($data) - 1]);
-        return substr($data, 0, -$padding);
+		//return substr($data, 0, -$padding);
+		return openssl_decrypt(base64_decode($data), 'aes-256-cbc', $this->key, OPENSSL_RAW_DATA, $this->iv);
     }
 }
 	session_start();

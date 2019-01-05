@@ -29,7 +29,7 @@
 
 	function encrypt($mensaje)
 	{
-		//$cipher = mcrypt_module_open(MCRYPT_RIJNDAEL_128, '', MCRYPT_MODE_CBC, '');
+		$cipher = mcrypt_module_open(MCRYPT_RIJNDAEL_128, '', MCRYPT_MODE_CBC, '');
 		/*$key256 = '12345678901234561234567890123456';
 		$iv = '1234567890123456';
 		$plainText = $mensaje;

@@ -5,7 +5,7 @@
   $con = mysqli_connect($host, $usuario, $contraseña);
   mysqli_select_db($con, $bd);
 
-  $query = "select nombre, AES_DECRYPT(texto, ".$secret_key."),fecha from mensaje where id_conversacion = ".$_POST['conversacion']."";
+  $query = "select nombre, AES_DECRYPT(texto, '".$secret_key."'),fecha from mensaje where id_conversacion = ".$_POST['conversacion']."";
   $resul = mysqli_query($con, $query);
   $objJson = array();
   while($fila = mysqli_fetch_array($resul))

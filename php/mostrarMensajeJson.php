@@ -7,7 +7,7 @@
   mysqli_select_db($con, $bd);
 
   $mc = new MagicCrypt($key, 256);
-
+  use org\magiclen\magiccrypt\MagicCrypt;
   $query = "select nombre, texto, fecha from mensaje where id_conversacion = ".$_SESSION['conversacion']."";
   $resul = mysqli_query($con, $query);
   $objJson = array();

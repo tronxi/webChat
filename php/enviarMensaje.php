@@ -1,10 +1,33 @@
 <?php
+class AES
+{
+    var $key = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
+    var $iv = 'AAAAAAAAAAAAAAAA';
+ 
+    function encryptToken($data)
+    {
+        // Mcrypt library has been DEPRECATED since PHP 7.1, use openssl:
+        // return openssl_encrypt($data, 'aes-256-cbc', $this->key, OPENSSL_RAW_DATA, $this->iv);
+        $padding = 16 - (strlen($data) % 16);
+        $data .= str_repeat(chr($padding), $padding);
+        return mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $this->key, $data, MCRYPT_MODE_CBC, $this->iv);
+    }
+ 
+    function decryptToken($data)
+    {
+        // Mcrypt library has been DEPRECATED since PHP 7.1, use openssl:
+        // return openssl_decrypt(base64_decode($data), 'aes-256-cbc', $this->key, OPENSSL_RAW_DATA, $this->iv);
+        $data = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $this->key, base64_decode($data), MCRYPT_MODE_CBC, $this->iv);
+        $padding = ord($data[strlen($data) - 1]);
+        return substr($data, 0, -$padding);
+    }
+}
 	session_start();
 	include 'datos.php';
 	$con = mysqli_connect($host, $usuario, $contraseña); mysqli_select_db($con, $bd);
 
-	$mensajeCifrado = encrypt_decrypt('encrypt', $_POST['mensaje']);
-
+	//$mensajeCifrado = encrypt_decrypt('encrypt', $_POST['mensaje']);
+	$mensajeCifrado = base64_encode($aes->encryptToken( $_POST['mensaje']);
 	$query = "insert into mensaje (nombre, texto, fecha, id_conversacion) values ('".$_SESSION['usuario']."', '".$mensajeCifrado."', '".date('Y/m/d H:i:s')."', ".$_SESSION['conversacion'].")";
 	mysqli_query($con, $query);
 

@@ -35,7 +35,7 @@
 		$ciphertext     = openssl_encrypt($message, AES_METHOD, $password, OPENSSL_RAW_DATA, $iv);
 		$ciphertext_hex = bin2hex($ciphertext);
 		$iv_hex         = bin2hex($iv);
-		return "$iv_hex:$ciphertext_hex";
+		return $iv_hex:$ciphertext_hex;
 	}
 
 	enviar($tokenNecesario);

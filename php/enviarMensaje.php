@@ -3,8 +3,8 @@
 	include 'datos.php';
 	$con = mysqli_connect($host, $usuario, $contraseña); mysqli_select_db($con, $bd);
 
-	//$mensajeCifrado = encrypt( $_POST['mensaje']);
-	$mensajeCifrado = encrypt_decrypt('encrypt', $_POST['mensaje']);
+	$mensajeCifrado = encrypt( $_POST['mensaje']);
+	//$mensajeCifrado = encrypt_decrypt('encrypt', $_POST['mensaje']);
 
 	$query = "insert into mensaje (nombre, texto, fecha, id_conversacion) values ('".$_SESSION['usuario']."', '".$mensajeCifrado."', '".date('Y/m/d H:i:s')."', ".$_SESSION['conversacion'].")";
 	mysqli_query($con, $query);
@@ -29,15 +29,16 @@
 
 	function encrypt($mensaje)
 	{
-		$cipher = mcrypt_module_open(MCRYPT_RIJNDAEL_128, '', MCRYPT_MODE_CBC, '');
-		$key256 = '12345678901234561234567890123456';
+		//$cipher = mcrypt_module_open(MCRYPT_RIJNDAEL_128, '', MCRYPT_MODE_CBC, '');
+		/*$key256 = '12345678901234561234567890123456';
 		$iv = '1234567890123456';
 		$plainText = $mensaje;
 		mcrypt_generic_init($cipher, $key256, $iv);
 		$cipherText256 = mcrypt_generic($cipher,$plainText );
 		mcrypt_generic_deinit($cipher);
 		$cipherHexText256 =bin2hex($cipherText256);
-		echo $cipherHexText256;
+		//return $cipherHexText256;*/
+		return "hola";
 	}
 
 	function encrypt_decrypt($action, $string)

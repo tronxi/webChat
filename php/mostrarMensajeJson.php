@@ -12,7 +12,7 @@
   {
     $objJson[] = array('nombre' => $fila['nombre'],
                         'fecha' => $fila['fecha'],
-                      'texto' => decrypt($fila['texto'], "AAAA"));
+                      'texto' => decrypt($fila['texto'], $key));
   }
 
   $query = "UPDATE conversacion

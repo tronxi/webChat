@@ -2,7 +2,7 @@
 	session_start();
 	include 'datos.php';
 	$con = mysqli_connect($host, $usuario, $contraseña); mysqli_select_db($con, $bd);
-	$mensajeCifrado = encrypt($_POST['mensaje'], "AAAA");
+	$mensajeCifrado = encrypt($_POST['mensaje'], $key);
 	$query = "insert into mensaje (nombre, texto, fecha, id_conversacion) values ('".$_SESSION['usuario']."', '".$mensajeCifrado."', '".date('Y/m/d H:i:s')."', ".$_SESSION['conversacion'].")";
 	mysqli_query($con, $query);
 

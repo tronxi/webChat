@@ -30,9 +30,11 @@
 
 		$encrypt_method = "AES-256-CBC";
 
-		$key = hash('sha256', $secret_key);
+		//$key = hash('sha256', $secret_key);
 
-		$iv = substr(hash('sha256', $secret_iv), 0, 16);
+		//$iv = substr(hash('sha256', $secret_iv), 0, 16);
+		$key = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
+    	$iv = 'AAAAAAAAAAAAAAAA';
 
 		if( $action == 'encrypt' )
 		{

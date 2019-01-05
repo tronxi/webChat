@@ -1,6 +1,8 @@
 <?php
   session_start();
   header('Content-Type: text/html; charset=utf-8');
+  header("Access-Control-Allow-Origin: *");  
+  header("Content-Type: application/json");
   include 'datos.php';
   $con = mysqli_connect($host, $usuario, $contraseña);
   mysqli_select_db($con, $bd);

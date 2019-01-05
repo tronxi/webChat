@@ -27,11 +27,11 @@ class AES
 	include 'datos.php';
 	$con = mysqli_connect($host, $usuario, $contraseña); mysqli_select_db($con, $bd);
 	//$aes = new AES();
-	$mensajeCifrado = encrypt_decrypt('encrypt', $_POST['mensaje']);
+	//$mensajeCifrado = encrypt_decrypt('encrypt', $_POST['mensaje']);
 	$method = 'aes-256-cbc';
 	var $key2 = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
     var $iv2 = 'AAAAAAAAAAAAAAAA';
-	$mensajeCifrado2 = openssl_encrypt($_POST['mensaje'], $method, $key2, 0, $iv2);
+	$mensajeCifrado = base64_encode( openssl_encrypt($_POST['mensaje'], "AES-256-CBC", $key2, 0, $iv2));
 	$query = "insert into mensaje (nombre, texto, fecha, id_conversacion) values ('".$_SESSION['usuario']."', '".$mensajeCifrado."', '".date('Y/m/d H:i:s')."', ".$_SESSION['conversacion'].")";
 	mysqli_query($con, $query);
 

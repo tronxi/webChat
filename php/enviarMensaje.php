@@ -36,7 +36,7 @@
 		$cipherText256 = mcrypt_generic($cipher,$plainText );
 		mcrypt_generic_deinit($cipher);
 		$cipherHexText256 =bin2hex($cipherText256);
-		return $cipherHexText256;
+		echo $cipherHexText256;
 	}
 
 	function encrypt_decrypt($action, $string)

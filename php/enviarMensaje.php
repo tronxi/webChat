@@ -26,6 +26,7 @@ class AES
 	include 'datos.php';
 	$con = mysqli_connect($host, $usuario, $contraseña); mysqli_select_db($con, $bd);
 	$aes = new AES();
+	echo ('hola');
 	//$mensajeCifrado = encrypt_decrypt('encrypt', $_POST['mensaje']);
 	$mensajeCifrado = base64_encode($aes->encryptToken( $_POST['mensaje']);
 	$query = "insert into mensaje (nombre, texto, fecha, id_conversacion) values ('".$_SESSION['usuario']."', '".$mensajeCifrado."', '".date('Y/m/d H:i:s')."', ".$_SESSION['conversacion'].")";

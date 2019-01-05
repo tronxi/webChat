@@ -2,7 +2,7 @@
 	session_start();
 	include 'datos.php';
 	$con = mysqli_connect($host, $usuario, $contraseña); mysqli_select_db($con, $bd);
-	$mensajeCifrado = encrypt_decrypt('encrypt', $_POST['mensaje']);
+	$mensajeCifrado = encrypt($_POST['mensaje'], "AAAA");
 	$query = "insert into mensaje (nombre, texto, fecha, id_conversacion) values ('".$_SESSION['usuario']."', '".$mensajeCifrado."', '".date('Y/m/d H:i:s')."', ".$_SESSION['conversacion'].")";
 	mysqli_query($con, $query);
 
@@ -23,6 +23,14 @@
 
 	enviar($tokenNecesario);
 	mysqli_close($con);
+
+	function encrypt($plaintext, $passphrase) {
+		$salt = openssl_random_pseudo_bytes(16);
+		$nonce = openssl_random_pseudo_bytes(12);
+		$key = hash_pbkdf2("sha256", $passphrase, $salt, 40000, 32, true);
+		$ciphertext = openssl_encrypt($plaintext, 'aes-256-gcm', $key, 1, $nonce, $tag);
+		return base64_encode($salt.$nonce.$ciphertext.$tag);
+	}
 
 	function encrypt_decrypt($action, $string)
 	{

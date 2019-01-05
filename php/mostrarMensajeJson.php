@@ -12,7 +12,7 @@
   {
     $objJson[] = array('nombre' => $fila['nombre'],
                         'fecha' => $fila['fecha'],
-                      'texto' => encrypt_decrypt('decrypt', $fila['texto']));
+                      'texto' => decrypt($fila['texto'], "AAAA"));
   }
 
   $query = "UPDATE conversacion
@@ -30,6 +30,16 @@
 
   echo json_encode($objJson);
 
+  function decrypt($ciphertext, $passphrase) {
+    $input = base64_decode($ciphertext);
+    $salt = substr($input, 0, 16);
+    $nonce = substr($input, 16, 12);
+    $ciphertext = substr($input, 28, -16);
+    $tag = substr($input, -16);
+    $key = hash_pbkdf2("sha256", $passphrase, $salt, 40000, 32, true);
+    $plaintext = openssl_decrypt($ciphertext, 'aes-256-gcm', $key, 1, $nonce, $tag);
+    return $plaintext;
+}
     function encrypt_decrypt($action, $string)
 	{
 		$output = false;

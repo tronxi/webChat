@@ -24,43 +24,6 @@
 	enviar($tokenNecesario);
 	mysqli_close($con);
 
-	function encrypt($plaintext, $passphrase) {
-		$salt = openssl_random_pseudo_bytes(16);
-		$nonce = openssl_random_pseudo_bytes(12);
-		$key = hash_pbkdf2("sha256", $passphrase, $salt, 40000, 32, true);
-		$ciphertext = openssl_encrypt($plaintext, 'aes-256-gcm', $key, 1, $nonce, $tag);
-		return base64_encode($salt.$nonce.$ciphertext.$tag);
-	}
-
-	function encrypt_decrypt($action, $string)
-	{
-		$output = false;
-
-		$encrypt_method = "AES-256-CBC";
-
-		//$key = hash('sha256', $secret_key);
-
-		//$iv = substr(hash('sha256', $secret_iv), 0, 16);
-		$key = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
-    	$iv = 'AAAAAAAAAAAAAAAA';
-
-		if( $action == 'encrypt' )
-		{
-			$output = openssl_encrypt($string, $encrypt_method, $key, 0, $iv);
-			$output = base64_encode($output);
-		}
-		else if( $action == 'decrypt' )
-		{
-			$output = openssl_decrypt(base64_decode($string), $encrypt_method, $key, 0, $iv);
-		}
-
-		return $output;
-	}
-	function console_log( $data ){
-		echo '<script>';
-		echo 'console.log('. json_encode( $data ) .')';
-		echo '</script>';
-	  }
 
 	function enviar($tokenNecs)
 	{

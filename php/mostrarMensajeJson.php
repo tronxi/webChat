@@ -1,12 +1,10 @@
 <?php
- include 'MagicCrypt.php';
   session_start();
   header('Content-Type: text/html; charset=utf-8');
   include 'datos.php';
   $con = mysqli_connect($host, $usuario, $contraseña);
   mysqli_select_db($con, $bd);
 
-  $mc = new MagicCrypt('magickey', 256);
 
   $query = "select nombre, texto, fecha from mensaje where id_conversacion = ".$_SESSION['conversacion']."";
   $resul = mysqli_query($con, $query);
@@ -15,7 +13,7 @@
   {
     $objJson[] = array('nombre' => $fila['nombre'],
                         'fecha' => $fila['fecha'],
-                      'texto' => $mc->decrypt($fila['texto']));
+                      'texto' => $fila['texto']);
   }
 
   $query = "UPDATE conversacion

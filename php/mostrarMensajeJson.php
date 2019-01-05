@@ -6,7 +6,7 @@
   mysqli_select_db($con, $bd);
 
 
-  $query = "select nombre, texto, fecha from mensaje where id_conversacion = ".$_SESSION['conversacion']."";
+  $query = "select nombre, AES_DECRYPT(texto, ".$key."), fecha from mensaje where id_conversacion = ".$_SESSION['conversacion']."";
   $resul = mysqli_query($con, $query);
   $objJson = array();
   while($fila = mysqli_fetch_array($resul))

@@ -28,7 +28,7 @@
 
 	function enviar($tokenNecs)
 	{
-		define('API_ACCESS_KEY','AAAA4iUUfRc:APA91bFSDG8l61UvTH3y3keSmNfTodFgaH9rNj2IE84z3Ob9YDtZqLkuGFNEv0G3kZnsj_8XYo5I0CCtQ9ZR9ZX1YIgtu01o7ePDcyU8lQuD6W6X-enuPL85zJsFnDTWXB5O61irybXO');
+		define('API_ACCESS_KEY',$server_key);
 		$fcmUrl = 'https://fcm.googleapis.com/fcm/send';
 		$token= $tokenNecs;
 	
